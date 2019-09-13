@@ -6,6 +6,18 @@ using std::cout;
 using std::cin;
 using std::endl;
 
+
+char[] tol337c0de(const char[]& str);
+char[] d3c0de(const char[]& str);
+bool is3qu@l(const char[]& str1, const char[]& str2);
+
+/**
+ * NOTE: UNTIL WE BETTER UNDERSTAND RETURNING ARRAYS FROM FUNCTIONS, THIS CODE WILL BE LEFT
+ * ABANDONED FOR THE TIME BEING
+ **/
+
+
+
 char[] tol337c0de(const char[]& str) {
 
     char[] c0de;
@@ -26,9 +38,22 @@ char[] tol337c0de(const char[]& str) {
     return c0de;
 }
 
-char[] dec0de() {
+char[] d3c0de(const char[]& str) {
 
 }
+
+bool is3qu@l(const char[]& str1, const char[]& str2) {
+    if(strlen(str1) != strlen(str2)) return false;
+    char[] l1 = tol337c0de(str1);
+    char[] l2 = tol337c0de(str2);
+    
+    for(size_t i = 0; i < strlen(l1); i++) {
+        if(l1[i] != l2[i]) return false;
+    }
+
+    return true;
+}
+
 
 int main() {
 
