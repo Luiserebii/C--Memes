@@ -8,7 +8,7 @@ using std::endl;
 
 
 char[] tol337c0de(const char[]& str);
-char[] d3c0de(const char[]& str);
+char[] d3c0de(const char[]& c0de);
 bool is3qu@l(const char[]& str1, const char[]& str2);
 
 /**
@@ -38,7 +38,23 @@ char[] tol337c0de(const char[]& str) {
     return c0de;
 }
 
-char[] d3c0de(const char[]& str) {
+char[] d3c0de(const char[]& c0de) {
+    char[] str;
+    //Create a copy of our c-string
+    strcpy(str, c0de);
+
+    for(size_t i = 0; i < strlen(str); i++) {
+        if(isalpha(str[i])) {
+            //Let's grab a lowercase instance to make it easier to identify
+            char c = tolower(str[i]);
+            if(c == '@') { str[i] = 'a'; } 
+            else if(c == '3') { str[i] = 'e'; }
+            else if(c == '1') { str[i] = 'i'; }
+            else if(c == '0') { str[i] = 'o'; }
+            else if(c == '7') { str[i] = 't'; }
+        }
+    }
+    return str;
 
 }
 
