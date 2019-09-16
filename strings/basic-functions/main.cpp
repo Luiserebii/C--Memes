@@ -6,11 +6,15 @@
 
 
 #include <iostream>
+#include <sstream>
 #include <string>
 
 using std::cin;
 using std::cout;
 using std::endl;
+
+using std::string;
+using std::stringstream;
 
 enum fx { SIZE };
 
@@ -27,11 +31,17 @@ void run() {
 
     cout << "Hello! This is a program allowing for selection of various string functions." << endl;
     cout << options() << endl;
+    int opt;
+    cin >> opt;
+    if(opt == SIZE) {
+        runSize();
+    }
 }
 
 string options() {
-    string opt = "(" + SIZE + ")" + " size()" + "\n";
-    return opt;
+    stringstream opt;
+    opt <<  "(" << SIZE << ")" << " size()" << "\n";
+    return opt.str();
 }
 
 void runSize() {
