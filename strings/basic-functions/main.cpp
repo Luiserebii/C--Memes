@@ -44,11 +44,31 @@ string options() {
     return opt.str();
 }
 
-void runSize() {
+string promptString() {
     cout << "Please enter a string." << endl;
     string str;
     cin >> str;
     cout << "The string you entered is: " << str << endl << endl;
+    return str;
+}
+
+void runSize() {
+    string str = promptString();
     cout << "size(): " << str.size() << endl;
 }
 
+void runInsert() {
+    cout << "Please enter a string." << endl;
+    string str;
+    cin >> str;
+    cout << "The string you entered is: " << str << endl;
+    cout
+
+
+}
+
+void runRemove() {
+
+
+
+}
