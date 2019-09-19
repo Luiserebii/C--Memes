@@ -16,13 +16,14 @@ using std::endl;
 using std::string;
 using std::stringstream;
 
-enum fx { SIZE };
+enum fx { SIZE, INSERT, ERASE };
 
 void run();
 string options();
 void runSize();
 void runInsert();
-void runRemove();
+void runErase(); //NOT runRemove(); string::remove() doesn't seem to exist, or has been depricated;
+                 //it's now string::erase(), I imagine, which has the same params and functionality
 
 string promptString();
 string::size_type promptStringSizeType();
@@ -41,6 +42,10 @@ void run() {
     cin >> opt;
     if(opt == SIZE) {
         runSize();
+    } else if(opt == INSERT) {
+        runInsert();
+    } else if(opt == ERASE) {
+        runErase();
     }
 }
 
@@ -73,7 +78,7 @@ void runSize() {
 }
 
 void runInsert() {
-    cout << "string& insert (size_t pos, const string& str)" << endl; 
+    cout << "string& insert (size_t pos, const string& str);" << endl; 
     string str = promptString();
     cout << "Now for params..." << endl;
     string::size_type pos = promptStringSizeType();
@@ -85,8 +90,15 @@ void runInsert() {
     cout << "insert(): " << str << endl;
 }
 
-void runRemove() {
+void runErase() {
+    cout << "string& erase (size_t pos = 0, size_t len = npos);" << endl;
+    string str = promptString();
+    cout << "Now for params..." << endl;
+    string::size_type pos = promptStringSizeType();
+    string::size_type len = promptStringSizeType();
+    
+    //Run erase
+    str.erase(pos, len);
 
-
-
+    cout << "erase(): " << str << endl;
 }
