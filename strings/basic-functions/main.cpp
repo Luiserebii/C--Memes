@@ -50,8 +50,16 @@ void run() {
 }
 
 string options() {
+    stringstream opts;
+    opt << option(SIZE, "size()");
+    opt << option(INSERT, "insert()");
+    opt << option(ERASE, "erase()");
+    return opt.str();
+}
+
+string option(int n, string name) {
     stringstream opt;
-    opt <<  "(" << SIZE << ")" << " size()" << "\n";
+    opt <<  "(" << n << ")" << "  " << name << endl;
     return opt.str();
 }
 
