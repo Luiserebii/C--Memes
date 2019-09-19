@@ -21,6 +21,12 @@ enum fx { SIZE };
 void run();
 string options();
 void runSize();
+void runInsert();
+void runRemove();
+
+string promptString();
+string::size_type promptStringSizeType();
+
 
 int main() {
     run();
@@ -48,9 +54,18 @@ string promptString() {
     cout << "Please enter a string." << endl;
     string str;
     cin >> str;
-    cout << "The string you entered is: " << str << endl << endl;
+//    cout << "The string you entered is: " << str << endl << endl;
     return str;
 }
+
+string::size_type promptStringSizeType() {
+    cout << "Please enter an integer, or a number which corresponds to string::size_type: " << endl;
+    string::size_type num;
+    cin >> num;
+    return num;
+}
+
+
 
 void runSize() {
     string str = promptString();
@@ -58,13 +73,16 @@ void runSize() {
 }
 
 void runInsert() {
-    cout << "Please enter a string." << endl;
-    string str;
-    cin >> str;
-    cout << "The string you entered is: " << str << endl;
-    cout
-
-
+    cout << "string& insert (size_t pos, const string& str)" << endl; 
+    string str = promptString();
+    cout << "Now for params..." << endl;
+    string::size_type pos = promptStringSizeType();
+    string inStr = promptString();
+    
+    //Run insert
+    str.insert(pos, inStr);
+    
+    cout << "insert(): " << str << endl;
 }
 
 void runRemove() {
