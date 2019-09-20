@@ -161,4 +161,12 @@ void runSubstr() {
     cout << "substr() " << res << endl;
 }
 
+void runEmpty() {
+    cout << "bool empty() const;" << endl;
+    string str = promptString();
 
+    //Run empty
+    bool res = str.empty();
+
+    cout << "empty() " << res << endl;
+}
