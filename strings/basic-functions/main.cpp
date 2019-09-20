@@ -126,6 +126,24 @@ void runFind() {
 
 void runRFind() {
     cout << "size_t rfind (const string& str, size_t pos = npos) const;" << endl;
-    
-    
+    string str = promptString();
+    cout << "Now for params..." << endl;
+    string str2 = promptString();
+
+    //Run rfind
+    string::size_type i = str.rfind(str2);
+
+    cout << "rfind(): " << i << endl;
+}
+
+void runAt() {
+    cout << "const char& at (size_t pos) const;" << endl;
+    string str = promptString();
+    cout << "Now for params..." << endl;
+    string::size_type pos = promptStringSizeType();
+
+    //Run at
+    char res = str.at(i);
+
+    cout << "at(): " << res << endl;
 }
