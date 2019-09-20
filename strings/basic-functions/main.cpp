@@ -111,3 +111,21 @@ void runErase() {
 
     cout << "erase(): " << str << endl;
 }
+
+void runFind() {
+    cout << "size_t find (const string& str, size_t pos = 0) const;" << endl;
+    string str = promptString();
+    cout << "Now for params..." << endl;
+    string str2 = promptString();
+
+    //Run find
+    string::size_type i = str.find(str2);
+
+    cout << "find(): " << i << endl;
+}
+
+void runRFind() {
+    cout << "size_t rfind (const string& str, size_t pos = npos) const;" << endl;
+    
+    
+}
