@@ -147,3 +147,18 @@ void runAt() {
 
     cout << "at(): " << res << endl;
 }
+
+void runSubstr() {
+    cout << "string substr (size_t pos = 0, size_t len = npos) const;" << endl;
+    string str = promptString();
+    cout << "Now for params..." << endl;
+    string::size_type pos = promptStringSizeType();
+    string::size_type npos = promptStringSizeType();
+
+    //Run substr
+    string res = str.substr(pos, npos);
+
+    cout << "substr() " << res << endl;
+}
+
+
