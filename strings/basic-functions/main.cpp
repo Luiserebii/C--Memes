@@ -20,6 +20,7 @@ enum fx { SIZE, INSERT, ERASE };
 
 void run();
 string options();
+string option(int n, string name);
 void runSize();
 void runInsert();
 void runErase(); //NOT runRemove(); string::remove() doesn't seem to exist, or has been depricated;
@@ -51,10 +52,10 @@ void run() {
 
 string options() {
     stringstream opts;
-    opt << option(SIZE, "size()");
-    opt << option(INSERT, "insert()");
-    opt << option(ERASE, "erase()");
-    return opt.str();
+    opts << option(SIZE, "size()");
+    opts << option(INSERT, "insert()");
+    opts << option(ERASE, "erase()");
+    return opts.str();
 }
 
 string option(int n, string name) {
