@@ -16,7 +16,7 @@ using std::endl;
 using std::string;
 using std::stringstream;
 
-enum fx { SIZE, INSERT, ERASE };
+enum fx { SIZE, INSERT, ERASE, FIND, RFIND, AT, SUBSTR, EMPTY };
 
 void run();
 string options();
@@ -25,6 +25,11 @@ void runSize();
 void runInsert();
 void runErase(); //NOT runRemove(); string::remove() doesn't seem to exist, or has been depricated;
                  //it's now string::erase(), I imagine, which has the same params and functionality
+void runFind();
+void runRFind();
+void runAt();
+void runSubstr();
+void runEmpty();
 
 string promptString();
 string::size_type promptStringSizeType();
@@ -47,6 +52,16 @@ void run() {
         runInsert();
     } else if(opt == ERASE) {
         runErase();
+    } else if(opt == FIND) {
+        runFind();
+    } else if(opt == RFIND) {
+        runRFind();
+    } else if(opt == AT) {
+        runAt();
+    } else if(opt == SUBSTR) {
+        runSubstr();
+    } else if(opt == EMPTY) {
+        runEmpty();
     }
 }
 
@@ -55,6 +70,11 @@ string options() {
     opts << option(SIZE, "size()");
     opts << option(INSERT, "insert()");
     opts << option(ERASE, "erase()");
+    opts << option(FIND, "find()");
+    opts << option(RFIND, "rfind()");
+    opts << option(AT, "at()");
+    opts << option(SUBSTR, "substr()");
+    opts << option(EMPTY, "empty()");
     return opts.str();
 }
 
