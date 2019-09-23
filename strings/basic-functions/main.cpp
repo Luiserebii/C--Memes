@@ -67,6 +67,13 @@ void run() {
 
 string options() {
     stringstream opts;
+    //Refactor this below; make it cycle through an array of struct Options
+    //struct Option {
+    //  int id;
+    //  string name;
+    //}
+    //
+    //This is an agnostic implementation, and users can define enum as they please (!)
     opts << option(SIZE, "size()");
     opts << option(INSERT, "insert()");
     opts << option(ERASE, "erase()");
