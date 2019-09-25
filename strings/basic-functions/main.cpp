@@ -170,7 +170,7 @@ void runAt() {
     string::size_type pos = promptStringSizeType();
 
     //Run at
-    char res = str.at(i);
+    char res = str.at(pos);
 
     cout << "at(): " << res << endl;
 }
