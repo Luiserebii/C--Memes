@@ -11,8 +11,6 @@ class Prompter {
         //Uh oh, issue here... We
         virtual Option[] getOptions() = 0;
         virtual void setOptions(Option[] opts = 0);
-        
-
 
 }
 
