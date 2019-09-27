@@ -9,6 +9,7 @@
 #include <list>
 
 #include "time.h"
+#include "pretty-print.h"
 
 using std::cin;
 using std::cout;
@@ -24,18 +25,9 @@ using std::list;
 
 using std::chrono::high_resolution_clock;
 using std::chrono::time_point;
-/*
-std::ostream& printTimeDifference(std::ostream& out, std::chrono::high_resolution_clock::time_point a, std::chrono::high_resolution_clock::time_point b, std::string prefix = "", std::string postfix = "");
-std::string timeDifferenceToString(std::chrono::high_resolution_clock::time_point a, std::chrono::high_resolution_clock::time_point b);
-*/std::string toTitle(std::string str);
 
 void vectorInsertDelete(std::vector<int>& v);
 void listInsertDelete(std::list<int>& l);
-
-/*struct TimeRecord {
-    std::chrono::high_resolution_clock::time_point start;
-    std::chrono::high_resolution_clock::time_point end;
-};*/
 
 /**
  * Exercise:
@@ -145,10 +137,4 @@ void listInsertDelete(list<int>& l) {
     cout << "[TESTERS NOTE]: The sizes should be the same, as each position is 1 opportunity for an insert/delete" << endl;
     */
 
-}
-
-string toTitle(string str) {
-    string::size_type size = str.size() + 1;
-    string headline(size, '=');
-    return headline + "\n" + str + "\n" + headline + "\n";
 }
