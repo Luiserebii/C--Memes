@@ -116,8 +116,8 @@ void listInsertDelete(list<int>& l) {
     //Just for logging:
     /*typedef list<int>::size_type l_size;
     l_size initialSize = l.size();
-    l_size numOfExecs = 0;*/
-
+    l_size numOfExecs = 0;
+    */
     //Note the usage of != here; we don't have a sense of direction in indexing, "<" operator is non-existent;
     //we thus use this 
     for(list<int>::iterator i = l.begin(); i != l.end(); ++i) {
