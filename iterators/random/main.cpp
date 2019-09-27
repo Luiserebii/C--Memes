@@ -15,6 +15,7 @@ using std::cout;
 using std::endl;
 
 istream& readIntsToVector(vector<int>& intVector, istream& in);
+string intVectorToString(const vector<int>& v);
 
 int main() {
 
@@ -51,7 +52,6 @@ string intVectorToString(const vector<int>& v) {
 
     stringstream s;
     for(vector<int>::const_iterator i = v.begin(); i < v.end(); ++i) {
-        cout << "Iterator: " << *i << endl;
         s << *i << endl; //Applying dereference operator
     }
     return s.str();
