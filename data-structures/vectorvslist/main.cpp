@@ -75,6 +75,12 @@ int main() {
 }
 
 void vectorInsertDelete(vector<int>& v) {
+    
+    //Just for logging:
+    typedef vector<int>::size_type v_size;
+    v_size initialSize = v.size();
+    v_size numOfExecs = 0;
+
     for(vector<int>::iterator i = v.begin(); i < v.end(); ++i) {
         //Roll from 0 - 2
         int n = rand() % 3;
@@ -86,8 +92,16 @@ void vectorInsertDelete(vector<int>& v) {
             //Advance newPos once, and set it to our i to continue traversal
             ++newPos;
             i = newPos;
+
+            //For logging:
+            ++numOfExecs;
         }
     }
+    v_size endSize = v.size();
+    cout << "Logging: " << endl << "Initial size: " << initialSize << endl << "End size: " << endSize << endl;
+    cout << "Number of executions: " << numOfExecs << endl;
+    cout << "[TESTERS NOTE]: The sizes should be the same, as each position is 1 opportunity for an insert/delete" << endl;
+    
 }
 
 
