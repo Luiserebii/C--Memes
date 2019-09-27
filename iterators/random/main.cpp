@@ -16,6 +16,7 @@ using std::endl;
 
 istream& readIntsToVector(vector<int>& intVector, istream& in);
 string intVectorToString(const vector<int>& v);
+void removeIntLessThan(vector<int>& v, int x);
 
 int main() {
 
@@ -55,4 +56,11 @@ string intVectorToString(const vector<int>& v) {
         s << *i << endl; //Applying dereference operator
     }
     return s.str();
+}
+
+
+void removeIntLessThan(vector<int>& v, int x) {
+    for(vector<int>::iterator i = v.begin(); i < v.end(); ++i) {
+        v.erase(i);
+    }
 }
