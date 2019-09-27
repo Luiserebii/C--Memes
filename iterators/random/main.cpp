@@ -2,14 +2,15 @@
 #include <vector>
 #include <exception>
 
-istream& readIntsToVector(vector<int>& intVector, istream& in);
-
 using std::vector;
 using std::exception;
+using std::istream;
 
 using std::cin;
 using std::cout;
 using std::endl;
+
+istream& readIntsToVector(vector<int>& intVector, istream& in);
 
 int main() {
 
@@ -20,7 +21,6 @@ int main() {
 
 istream& readIntsToVector(vector<int>& intVector, istream& in) {
 
-    vector<int> intVector;
     int x;
     while(in >> x) {
         //We make a pretty bad assumption here, partly for practice;
