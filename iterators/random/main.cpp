@@ -55,6 +55,7 @@ istream& readIntsToVector(vector<int>& intVector, istream& in) {
 string intVectorToString(const vector<int>& v) {
 
     stringstream s;
+    //We call v.begin() and v.end() here is actually not needed, but...
     for(vector<int>::const_iterator i = v.begin(); i < v.end(); ++i) {
         s << *i << endl; //Applying dereference operator
     }
@@ -63,6 +64,9 @@ string intVectorToString(const vector<int>& v) {
 
 
 void removeIntLessThan(vector<int>& v, int x) {
+    //Regular iterator needed here, as well as calling v.begin()/v.end()
+    //on every pass through loop due to manipulation of container (thus
+    //breaking any iterators) 
     for(vector<int>::iterator i = v.begin(); i < v.end(); ++i) {
         if(*i < 100) v.erase(i);
     }
