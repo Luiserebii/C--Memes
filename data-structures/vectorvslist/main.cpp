@@ -72,11 +72,11 @@ int main() {
     printTimeDifference(cout, vTime.start, vTime.end, toTitle("<vector> test"));
 
     //...and, on list...
-/*    lTime.start = high_resolution_clock::now();
+    lTime.start = high_resolution_clock::now();
     listInsertDelete(l);
     lTime.end = high_resolution_clock::now();
     printTimeDifference(cout, lTime.start, lTime.end, toTitle("<list> test"));
-*/
+
     return 0;
 }
 
