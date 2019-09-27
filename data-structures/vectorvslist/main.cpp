@@ -41,12 +41,12 @@ ostream& printTimeDifference(ostream& in, /*time_point<high_resolution_clock> a,
 string timeDifferenceToString(/*time_point<high_resolution_clock> a, time_point<high_resolution_clock> b*/ high_resolution_clock::time_point a, high_resolution_clock::time_point b) {
     stringstream ss;
 //    time_point<high_resolution_clock> diff = b - a;
-    high_resolution_clock::time_point diff = b - a;
+//    high_resolution_clock::time_point diff = b - a;
     ss << "Elapsed time: " << endl << endl
-        << std::chrono::duration_cast<std::chrono::nanoseconds>(diff).count() << " ns" << endl
-        << std::chrono::duration_cast<std::chrono::microseconds>(diff).count() << " µs" << endl
-        << std::chrono::duration_cast<std::chrono::milliseconds>(diff).count() << " ms" << endl
-        << std::chrono::duration_cast<std::chrono::seconds>(diff).count() << " s" << endl
+        << std::chrono::duration_cast<std::chrono::nanoseconds>(b - a).count() << " ns" << endl
+        << std::chrono::duration_cast<std::chrono::microseconds>(b - a).count() << " µs" << endl
+        << std::chrono::duration_cast<std::chrono::milliseconds>(b - a).count() << " ms" << endl
+        << std::chrono::duration_cast<std::chrono::seconds>(b - a).count() << " s" << endl
     ;
     return ss.str();
 }
