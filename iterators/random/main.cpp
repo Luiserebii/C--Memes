@@ -17,6 +17,7 @@ using std::endl;
 istream& readIntsToVector(vector<int>& intVector, istream& in);
 string intVectorToString(const vector<int>& v);
 void removeIntLessThan(vector<int>& v, int x);
+void allToInt(vector<int>& v, int x);
 
 int main() {
 
@@ -29,6 +30,8 @@ int main() {
     cout << "Removing everything less than 100: " << endl;
     removeIntLessThan(meme, 100);
     cout << "Here's your revised shit: " << endl << intVectorToString(meme) << endl;
+    allToInt(meme, 4);
+    cout << "I turned them all to 4s to troll your ass too: " << endl << intVectorToString(meme) << endl;
     return 0;
 }
 
@@ -69,5 +72,11 @@ void removeIntLessThan(vector<int>& v, int x) {
     //breaking any iterators) 
     for(vector<int>::iterator i = v.begin(); i < v.end(); ++i) {
         if(*i < 100) v.erase(i);
+    }
+}
+
+void allToInt(vector<int>& v, int x) {
+    for(vector<int>::iterator i = v.begin(); i < v.end(); ++i) {
+        *i = x; //Would this set the element...?
     }
 }
