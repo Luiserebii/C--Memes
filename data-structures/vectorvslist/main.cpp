@@ -54,12 +54,21 @@ int main() {
         l.push_back(n);
     }
 
-    //vectorInsertDelete()
+    //Finally, let's engage in execution and benchmarking...
     TimeRecord vTime, lTime;
 
-//    const high_resolution_clock::time_point start = high_resolution_clock::now();
-//    const high_resolution_clock::time_point end = high_resolution_clock::now();
+    //Test our insert/delete algorithm on <vector>
+    vTime.start = high_resolution_clock::now();
+    vectorInsertDelete(v);
+    vTime.end = high_resolution_clock::now();
     printTimeDifference(cout, start, end, toTitle("<vector> test"));
+
+    //...and, on list...
+    lTime.start = high_resolution_clock::now();
+    listInsertDelete(l);
+    lTime.end = high_resolution_clock::now();
+    printTimeDifference(cout, start, end, toTitle("<list> test"));
+
     return 0;
 }
 
