@@ -25,6 +25,11 @@ ostream& printTimeDifference(ostream& out, high_resolution_clock::time_point a, 
 string timeDifferenceToString(high_resolution_clock::time_point a, high_resolution_clock::time_point b);
 string toTitle(string str);
 
+struct TimeRecord {
+    high_resolution_clock::time_point start;
+    high_resolution_clock::time_point end;
+}
+
 /**
  * Exercise:
  * 
@@ -49,8 +54,11 @@ int main() {
         l.push_back(n);
     }
 
-    const high_resolution_clock::time_point start = high_resolution_clock::now();
-    const high_resolution_clock::time_point end = high_resolution_clock::now();
+    //vectorInsertDelete()
+    TimeRecord vTime, lTime;
+
+//    const high_resolution_clock::time_point start = high_resolution_clock::now();
+//    const high_resolution_clock::time_point end = high_resolution_clock::now();
     printTimeDifference(cout, start, end, toTitle("<vector> test"));
     return 0;
 }
