@@ -25,6 +25,8 @@ ostream& printTimeDifference(ostream& out, high_resolution_clock::time_point a, 
 string timeDifferenceToString(high_resolution_clock::time_point a, high_resolution_clock::time_point b);
 string toTitle(string str);
 
+vectorInsertDelete(vector<int>& v);
+
 struct TimeRecord {
     high_resolution_clock::time_point start;
     high_resolution_clock::time_point end;
@@ -48,7 +50,7 @@ int main() {
     vector<int> v;
     list<int> l;
 
-    for(double i = 0; i < size; i++) {
+    for(double i = 0; i < size; ++i) {
         int n = rand();
         v.push_back(n);
         l.push_back(n);
@@ -61,16 +63,33 @@ int main() {
     vTime.start = high_resolution_clock::now();
     vectorInsertDelete(v);
     vTime.end = high_resolution_clock::now();
-    printTimeDifference(cout, start, end, toTitle("<vector> test"));
+    printTimeDifference(cout, vTime.start, vTime.end, toTitle("<vector> test"));
 
     //...and, on list...
-    lTime.start = high_resolution_clock::now();
+/*    lTime.start = high_resolution_clock::now();
     listInsertDelete(l);
     lTime.end = high_resolution_clock::now();
-    printTimeDifference(cout, start, end, toTitle("<list> test"));
-
+    printTimeDifference(cout, lTime.start, lTime.end, toTitle("<list> test"));
+*/
     return 0;
 }
+
+vectorInsertDelete(vector<int>& v) {
+    for(vector<int>::iterator i = v.begin(); i < v.end(); ++i) {
+        //Roll from 0 - 2
+        int n = rand() % 3;
+        if(n == 0) {
+            //Erase element, grab returned iterator to next position
+            vector<int>::iterator pos = v.erase(i);
+            //Generate random int and insert
+            vector<int>::iterator newPos = v.insert(pos, rand());
+            //Advance newPos once, and set it to our i to continue traversal
+            ++newPos;
+            i = newPos;
+        }
+    }
+}
+
 
 ostream& printTimeDifference(ostream& out, high_resolution_clock::time_point a, high_resolution_clock::time_point b, string prefix, string postfix) {
     if(prefix != "") out << prefix;
