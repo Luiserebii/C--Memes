@@ -7,10 +7,14 @@ using std::cout;
 using std::endl;
 using std::string;
 using std::stringstream;
-using std::istream;
+using std::ostream;
 
 using std::chrono::high_resolution_clock;
 using std::chrono::time_point;
+
+ostream& printTimeDifference(ostream& in, /*time_point<high_resolution_clock> a, time_point<high_resolution_clock> b*/ high_resolution_clock::time_point a, high_resolution_clock::time_point b);
+string timeDifferenceToString(/*time_point<high_resolution_clock> a, time_point<high_resolution_clock> b*/ high_resolution_clock::time_point a, high_resolution_clock::time_point b);
+
 
 /**
  * Exercise:
@@ -22,8 +26,6 @@ using std::chrono::time_point;
 int main() {
 
 //    const time_point<high_resolution_clock> start = high_resolution_clock::now();
-
-
 //    const time_point<high_resolution_clock> end = high_resolution_clock::now();
 
     const high_resolution_clock::time_point start = high_resolution_clock::now();
@@ -31,8 +33,8 @@ int main() {
     return 0;
 }
 
-istream& printTimeDifference(istream& in, /*time_point<high_resolution_clock> a, time_point<high_resolution_clock> b*/ high_resolution_clock::time_point a, high_resolution_clock::time_point b) {
-    in << timeDifferenceToString(a, b);
+ostream& printTimeDifference(ostream& in, /*time_point<high_resolution_clock> a, time_point<high_resolution_clock> b*/ high_resolution_clock::time_point a, high_resolution_clock::time_point b) {
+    in << timeDifferenceToString(a, b) << endl;
     return in;
 }
 
@@ -40,7 +42,7 @@ string timeDifferenceToString(/*time_point<high_resolution_clock> a, time_point<
     stringstream ss;
 //    time_point<high_resolution_clock> diff = b - a;
     high_resolution_clock::time_point diff = b - a;
-    in << "Elapsed time: " << endl << endl
+    ss << "Elapsed time: " << endl << endl
         << std::chrono::duration_cast<std::chrono::nanoseconds>(diff).count() << " ns" << endl
         << std::chrono::duration_cast<std::chrono::microseconds>(diff).count() << " µs" << endl
         << std::chrono::duration_cast<std::chrono::milliseconds>(diff).count() << " ms" << endl
