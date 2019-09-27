@@ -1,5 +1,6 @@
 #include <iostream>
 #include <chrono>
+#include <cstdlib>
 #include <string>
 #include <sstream>
 
@@ -8,6 +9,7 @@ using std::endl;
 using std::string;
 using std::stringstream;
 using std::ostream;
+using std::rand;
 
 using std::chrono::high_resolution_clock;
 using std::chrono::time_point;
@@ -19,11 +21,26 @@ string toTitle(string str);
 /**
  * Exercise:
  * 
- * Attempt to absorb a data set of integers via a file, load them into a vector and list.
- * Within both data structures, add a random number of random integers (from 1 - 1/2 size of list)
- * to random spots, using insert(). Compare by benchmarking the time.
+ * Attempt to absorb a random data set of integers, load them into a vector and list.
+ * Within both data structures, iterate through each one by one. Randomly make a delete and
+ * insert at the same position. Compare by benchmarking the time.
  */
 int main() {
+
+    //Build a vector and list from file
+    cout << "Building <vector> and <list> from random..." << endl;
+    cout << "Enter a size: "; 
+    double size;
+    cin >> size;
+
+    vector<int> v;
+    list<int> l;
+
+    for(double i = 0; i < size; i++) {
+        int n = rand();
+        v.push_back(n);
+        l.push_back(l);
+    }
 
     const high_resolution_clock::time_point start = high_resolution_clock::now();
     const high_resolution_clock::time_point end = high_resolution_clock::now();
