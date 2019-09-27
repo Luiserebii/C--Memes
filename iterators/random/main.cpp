@@ -70,13 +70,18 @@ void removeIntLessThan(vector<int>& v, int x) {
     //Regular iterator needed here, as well as calling v.begin()/v.end()
     //on every pass through loop due to manipulation of container (thus
     //breaking any iterators) 
-    for(vector<int>::iterator i = v.begin(); i < v.end(); ++i) {
+
+    //Why can't we use const_iterator? It complains it isn't implemented:
+    // main.cpp:78:31: error: no matching function for call to ‘std::vector<int>::erase(std::vector<int>::const_iterator&)’
+    //
+    //However, it seems to exist in C++11: http://www.cplusplus.com/reference/vector/vector/erase/... This version of compiler is probably only conforming with the C++98, I'm guessing?
+    for(vector<int>::const_iterator i = v.begin(); i < v.end(); ++i) {
         if(*i < 100) v.erase(i);
     }
 }
 
 void allToInt(vector<int>& v, int x) {
     for(vector<int>::iterator i = v.begin(); i < v.end(); ++i) {
-        *i = x; //Would this set the element...?
+        *i = x; //Would this set the element...? Oh wow, it does!?!?!? interesting...
     }
 }
