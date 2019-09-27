@@ -1,6 +1,9 @@
 #include <iostream>
 #include <chrono>
 
+using std::cout;
+using std::endl;
+
 using std::chrono::high_resolution_clock;
 using std::chrono::time_point;
 
@@ -13,8 +16,24 @@ using std::chrono::time_point;
  */
 int main() {
 
-    const time_point start = high_resolution_clock::now();
+    const time_point<high_resolution_clock> start = high_resolution_clock::now();
 
-    console.log(start);
+    cout << "The current time: " << start << endl;
+
+    const time_point<high_resolution_clock> end = high_resolution_clock::now();
+
     return 0;
 }
+
+istream& printTimeDifference(time_point<high_resolution_clock> a, time_point<high_resolution_clock> b) {
+
+    cout << "Elapsed time: " << endl << endl
+        << chrono::duration_cast<chrono::nanoseconds>(end - start).count() << " ns" << endl
+        << chrono::duration_cast<chrono::microseconds>(end - start).count() << " µs" << endl
+        << chrono::duration_cast<chrono::milliseconds>(end - start).count() << " ms" << endl
+        << chrono::duration_cast<chrono::seconds>(end - start).count() << " s" << endl
+    ;
+
+}
+
+
