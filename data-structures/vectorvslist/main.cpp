@@ -25,12 +25,12 @@ ostream& printTimeDifference(ostream& out, high_resolution_clock::time_point a, 
 string timeDifferenceToString(high_resolution_clock::time_point a, high_resolution_clock::time_point b);
 string toTitle(string str);
 
-vectorInsertDelete(vector<int>& v);
+void vectorInsertDelete(vector<int>& v);
 
 struct TimeRecord {
     high_resolution_clock::time_point start;
     high_resolution_clock::time_point end;
-}
+};
 
 /**
  * Exercise:
@@ -74,7 +74,7 @@ int main() {
     return 0;
 }
 
-vectorInsertDelete(vector<int>& v) {
+void vectorInsertDelete(vector<int>& v) {
     for(vector<int>::iterator i = v.begin(); i < v.end(); ++i) {
         //Roll from 0 - 2
         int n = rand() % 3;
