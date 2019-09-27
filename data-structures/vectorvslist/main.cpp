@@ -23,16 +23,16 @@ using std::list;
 using std::chrono::high_resolution_clock;
 using std::chrono::time_point;
 
-ostream& printTimeDifference(ostream& out, high_resolution_clock::time_point a, high_resolution_clock::time_point b, string prefix = "", string postfix = "");
-string timeDifferenceToString(high_resolution_clock::time_point a, high_resolution_clock::time_point b);
-string toTitle(string str);
+std::ostream& printTimeDifference(std::ostream& out, std::chrono::high_resolution_clock::time_point a, std::chrono::high_resolution_clock::time_point b, std::string prefix = "", std::string postfix = "");
+std::string timeDifferenceToString(std::chrono::high_resolution_clock::time_point a, std::chrono::high_resolution_clock::time_point b);
+std::string toTitle(std::string str);
 
-void vectorInsertDelete(vector<int>& v);
-void listInsertDelete(list<int>& l);
+void vectorInsertDelete(std::vector<int>& v);
+void listInsertDelete(std::list<int>& l);
 
 struct TimeRecord {
-    high_resolution_clock::time_point start;
-    high_resolution_clock::time_point end;
+    std::chrono::high_resolution_clock::time_point start;
+    std::chrono::high_resolution_clock::time_point end;
 };
 
 /**
