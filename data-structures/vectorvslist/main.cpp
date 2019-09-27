@@ -4,12 +4,19 @@
 #include <string>
 #include <sstream>
 
+#include <vector>
+#include <list>
+
+using std::cin;
 using std::cout;
 using std::endl;
 using std::string;
 using std::stringstream;
 using std::ostream;
 using std::rand;
+
+using std::vector;
+using std::list;
 
 using std::chrono::high_resolution_clock;
 using std::chrono::time_point;
@@ -39,7 +46,7 @@ int main() {
     for(double i = 0; i < size; i++) {
         int n = rand();
         v.push_back(n);
-        l.push_back(l);
+        l.push_back(n);
     }
 
     const high_resolution_clock::time_point start = high_resolution_clock::now();
