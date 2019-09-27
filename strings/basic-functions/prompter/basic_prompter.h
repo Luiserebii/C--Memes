@@ -1,3 +1,6 @@
+#ifndef GUARD_Basic_Prompter_h
+#define GUARD_Basic_Prompter_h
+
 #include <string>
 #include <vector>
 #include "prompter.h"
@@ -16,3 +19,4 @@ class BasicPrompter is Prompter {
 
 };
 
+#endif

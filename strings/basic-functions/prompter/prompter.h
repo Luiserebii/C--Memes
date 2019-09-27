@@ -1,3 +1,6 @@
+#ifndef GUARD_Prompter_h
+#define GUARD_Prompter_h
+
 #include <string>
 #include <vector>
 
@@ -19,3 +22,5 @@ class Prompter {
         virtual void setOptions(std::vector<Option> opts) = 0;
 
 };
+
+#endif
