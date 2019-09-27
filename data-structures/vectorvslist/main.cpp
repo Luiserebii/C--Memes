@@ -25,15 +25,18 @@ int main() {
     return 0;
 }
 
-istream& printTimeDifference(time_point<high_resolution_clock> a, time_point<high_resolution_clock> b) {
+istream& printTimeDifference(istream& in, time_point<high_resolution_clock> a, time_point<high_resolution_clock> b) {
+    in << timeDifferenceToString(a, b);
+    return in;
+}
 
-    cout << "Elapsed time: " << endl << endl
+string timeDifferenceToString(time_point<high_resolution_clock> a, time_point<high_resolution_clock> b) {
+    stringstream ss;
+    in << "Elapsed time: " << endl << endl
         << chrono::duration_cast<chrono::nanoseconds>(end - start).count() << " ns" << endl
         << chrono::duration_cast<chrono::microseconds>(end - start).count() << " µs" << endl
         << chrono::duration_cast<chrono::milliseconds>(end - start).count() << " ms" << endl
         << chrono::duration_cast<chrono::seconds>(end - start).count() << " s" << endl
     ;
-
+    return ss.str();
 }
-
-
