@@ -1,10 +1,14 @@
 #include <iostream>
 #include <vector>
 #include <exception>
+#include <string>
+#include <sstream>
 
 using std::vector;
 using std::exception;
 using std::istream;
+using std::string;
+using std::stringstream;
 
 using std::cin;
 using std::cout;
@@ -15,6 +19,11 @@ istream& readIntsToVector(vector<int>& intVector, istream& in);
 int main() {
 
     cout << "Hello, please type in as many integers as you wish; any non-integers will end the loop." << endl;
+    vector<int> meme;
+    readIntsToVector(meme, cin);
+    cout << "Neat, thanks" << endl;
+    string str = intVectorToString(meme);
+    cout << "Here's your shit: " << endl << str << endl;
     return 0;
 }
 
@@ -36,4 +45,14 @@ istream& readIntsToVector(vector<int>& intVector, istream& in) {
     in.clear();
     return in;
 
+}
+
+string intVectorToString(const vector<int>& v) {
+
+    stringstream s;
+    for(vector<int>::const_iterator i = v.begin(); i < v.end(); ++i) {
+        cout << "Iterator: " << *i << endl;
+        s << *i << endl; //Applying dereference operator
+    }
+    return s.str();
 }
