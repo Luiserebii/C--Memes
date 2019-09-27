@@ -2,8 +2,6 @@
 #include <chrono>
 #include <cstdlib>
 #include <ctime>
-#include <string>
-#include <sstream>
 
 #include <vector>
 #include <list>
@@ -15,9 +13,6 @@
 using std::cin;
 using std::cout;
 using std::endl;
-using std::string;
-using std::stringstream;
-using std::ostream;
 using std::rand;
 using std::srand;
 
