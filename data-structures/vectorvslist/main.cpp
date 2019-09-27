@@ -12,7 +12,7 @@ using std::ostream;
 using std::chrono::high_resolution_clock;
 using std::chrono::time_point;
 
-ostream& printTimeDifference(ostream& in, high_resolution_clock::time_point a, high_resolution_clock::time_point b);
+ostream& printTimeDifference(ostream& out, high_resolution_clock::time_point a, high_resolution_clock::time_point b, string prefix = "", string postfix = "");
 string timeDifferenceToString(high_resolution_clock::time_point a, high_resolution_clock::time_point b);
 
 
@@ -27,11 +27,14 @@ int main() {
 
     const high_resolution_clock::time_point start = high_resolution_clock::now();
     const high_resolution_clock::time_point end = high_resolution_clock::now();
+    printTimeDifference(cout, start, end, "<vector> test \n");
     return 0;
 }
 
-ostream& printTimeDifference(ostream& out, high_resolution_clock::time_point a, high_resolution_clock::time_point b) {
+ostream& printTimeDifference(ostream& out, high_resolution_clock::time_point a, high_resolution_clock::time_point b, string prefix, string postfix) {
+    if(prefix != "") out << prefix;
     out << timeDifferenceToString(a, b) << endl;
+    if(postfix != "") out << postfix;
     return out;
 }
 
