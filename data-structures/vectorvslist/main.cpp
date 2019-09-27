@@ -1,6 +1,7 @@
 #include <iostream>
 #include <chrono>
 #include <cstdlib>
+#include <ctime>
 #include <string>
 #include <sstream>
 
@@ -14,6 +15,7 @@ using std::string;
 using std::stringstream;
 using std::ostream;
 using std::rand;
+using std::srand;
 
 using std::vector;
 using std::list;
@@ -49,6 +51,9 @@ int main() {
 
     vector<int> v;
     list<int> l;
+
+    //Set RNG random seed
+    srand(time(NULL));
 
     for(double i = 0; i < size; ++i) {
         int n = rand();
