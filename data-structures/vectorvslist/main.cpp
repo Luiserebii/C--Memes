@@ -14,7 +14,7 @@ using std::chrono::time_point;
 
 ostream& printTimeDifference(ostream& out, high_resolution_clock::time_point a, high_resolution_clock::time_point b, string prefix = "", string postfix = "");
 string timeDifferenceToString(high_resolution_clock::time_point a, high_resolution_clock::time_point b);
-
+string toTitle(string str);
 
 /**
  * Exercise:
@@ -27,7 +27,7 @@ int main() {
 
     const high_resolution_clock::time_point start = high_resolution_clock::now();
     const high_resolution_clock::time_point end = high_resolution_clock::now();
-    printTimeDifference(cout, start, end, "<vector> test \n");
+    printTimeDifference(cout, start, end, toTitle("<vector> test"));
     return 0;
 }
 
@@ -48,4 +48,10 @@ string timeDifferenceToString(high_resolution_clock::time_point a, high_resoluti
         << std::chrono::duration_cast<std::chrono::seconds>(b - a).count() << " s" << endl
     ;
     return ss.str();
+}
+
+string toTitle(string str) {
+    string::size_type size = str.size() + 1;
+    string headline(size, '=');
+    return headline + "\n" + str + "\n" + headline + "\n";
 }
