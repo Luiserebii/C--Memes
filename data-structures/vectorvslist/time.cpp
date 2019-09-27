@@ -3,6 +3,8 @@
 #include <string>
 #include <sstream>
 
+#include "time.h"
+
 using std::endl;
 using std::string;
 using std::stringstream;
@@ -10,15 +12,6 @@ using std::ostream;
 
 using std::chrono::high_resolution_clock;
 using std::chrono::time_point;
-
-std::ostream& printTimeDifference(std::ostream& out, std::chrono::high_resolution_clock::time_point a, std::chrono::high_resolution_clock::time_point b, std::string prefix = "", std::string postfix = "");
-std::string timeDifferenceToString(std::chrono::high_resolution_clock::time_point a, std::chrono::high_resolution_clock::time_point b);
-
-struct TimeRecord {
-    std::chrono::high_resolution_clock::time_point start;
-    std::chrono::high_resolution_clock::time_point end;
-};
-
 
 ostream& printTimeDifference(ostream& out, high_resolution_clock::time_point a, high_resolution_clock::time_point b, string prefix, string postfix) {
     if(prefix != "") out << prefix;
