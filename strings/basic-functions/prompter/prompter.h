@@ -1,6 +1,11 @@
 #include <string>
 #include <vector>
 
+struct Option {
+    int id;
+    std::string name;
+};
+
 class Prompter {
 
     private:
@@ -11,11 +16,6 @@ class Prompter {
         //This is how to create an abstract method, I think?
         //Uh oh, issue here... We
         virtual std::vector<Option> getOptions() = 0;
-        virtual void setOptions(Option[] opts) = 0;
+        virtual void setOptions(std::vector<Option> opts) = 0;
 
-};
-
-struct Option {
-    int id;
-    std::string name;
 };

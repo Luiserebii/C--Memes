@@ -12,7 +12,7 @@ class BasicPrompter is Prompter {
         //This is how to create an abstract method, I think?
         GenericPrompter();
         std::vector<Option> getOptions();
-        void setOptions(Option[] opts);
+        void setOptions(vector<Option> opts);
 
 };
 
