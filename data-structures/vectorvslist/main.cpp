@@ -12,8 +12,8 @@ using std::ostream;
 using std::chrono::high_resolution_clock;
 using std::chrono::time_point;
 
-ostream& printTimeDifference(ostream& in, /*time_point<high_resolution_clock> a, time_point<high_resolution_clock> b*/ high_resolution_clock::time_point a, high_resolution_clock::time_point b);
-string timeDifferenceToString(/*time_point<high_resolution_clock> a, time_point<high_resolution_clock> b*/ high_resolution_clock::time_point a, high_resolution_clock::time_point b);
+ostream& printTimeDifference(ostream& in, high_resolution_clock::time_point a, high_resolution_clock::time_point b);
+string timeDifferenceToString(high_resolution_clock::time_point a, high_resolution_clock::time_point b);
 
 
 /**
@@ -25,22 +25,18 @@ string timeDifferenceToString(/*time_point<high_resolution_clock> a, time_point<
  */
 int main() {
 
-//    const time_point<high_resolution_clock> start = high_resolution_clock::now();
-//    const time_point<high_resolution_clock> end = high_resolution_clock::now();
-
     const high_resolution_clock::time_point start = high_resolution_clock::now();
     const high_resolution_clock::time_point end = high_resolution_clock::now();
     return 0;
 }
 
-ostream& printTimeDifference(ostream& in, /*time_point<high_resolution_clock> a, time_point<high_resolution_clock> b*/ high_resolution_clock::time_point a, high_resolution_clock::time_point b) {
-    in << timeDifferenceToString(a, b) << endl;
-    return in;
+ostream& printTimeDifference(ostream& out, high_resolution_clock::time_point a, high_resolution_clock::time_point b) {
+    out << timeDifferenceToString(a, b) << endl;
+    return out;
 }
 
-string timeDifferenceToString(/*time_point<high_resolution_clock> a, time_point<high_resolution_clock> b*/ high_resolution_clock::time_point a, high_resolution_clock::time_point b) {
+string timeDifferenceToString(high_resolution_clock::time_point a, high_resolution_clock::time_point b) {
     stringstream ss;
-//    time_point<high_resolution_clock> diff = b - a;
 //    high_resolution_clock::time_point diff = b - a;
     ss << "Elapsed time: " << endl << endl
         << std::chrono::duration_cast<std::chrono::nanoseconds>(b - a).count() << " ns" << endl
