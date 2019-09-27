@@ -26,6 +26,9 @@ int main() {
     cout << "Neat, thanks" << endl;
     string str = intVectorToString(meme);
     cout << "Here's your shit: " << endl << str << endl;
+    cout << "Removing everything less than 100: " << endl;
+    removeIntLessThan(meme, 100);
+    cout << "Here's your revised shit: " << endl << intVectorToString(meme) << endl;
     return 0;
 }
 
@@ -61,6 +64,6 @@ string intVectorToString(const vector<int>& v) {
 
 void removeIntLessThan(vector<int>& v, int x) {
     for(vector<int>::iterator i = v.begin(); i < v.end(); ++i) {
-        v.erase(i);
+        if(*i < 100) v.erase(i);
     }
 }
