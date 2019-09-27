@@ -1,8 +1,8 @@
 #include <string>
 #include <vector>
-#include "generic_prompter.h"
-/**
-class GenericPrompter {
+#include "prompter.h"
+
+class BasicPrompter is Prompter {
 
     private:
         std::vector<Option> options;
@@ -15,13 +15,4 @@ class GenericPrompter {
         void setOptions(Option[] opts);
 
 };
-**/
-
-GenericPrompter::getOptions() {
-    return options;
-}
-
-GenericPrompter::setOptions(Option[] opts) {
-    options = opts;
-}
 
