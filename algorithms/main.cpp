@@ -42,8 +42,20 @@ int main() {
     cout << "b: " << vectorToString(b) << endl;
 
     cout << "Performing an implemented copy operation: " << endl;
-    copyImplementation(a.begin(), a.end(), b.begin());
+//    copyImplementation(a.begin(), a.end(), b.begin());
+    vector<int>::iterator i1, i2, appendTo;
+    i1 = a.begin();
+    i2 = a.end();
+    appendTo = b.begin();
 
+    for(vector<int>::iterator i = i1; i < i2; ++i1) {
+//        cout << "i1:  " << *i1 << endl;
+        //Copy to iterator
+        *appendTo = *i1;
+        //Move appendTo up
+        ++appendTo;
+    }
+//
     cout << "a: " << vectorToString(a) << endl;
     cout << "b: " << vectorToString(b) << endl;
 
@@ -70,6 +82,7 @@ string vectorToString(const vector<int>& v) {
 void copyImplementation(vector<int>::iterator i1, vector<int>::iterator i2, vector<int>::iterator appendTo) {
     //Loop through each iterator, until end of iterator range
     for(vector<int>::iterator i = i1; i < i2; ++i1) {
+        cout << "i1:  " << *i1 << endl;
         //Copy to iterator
         *appendTo = *i1;
         //Move appendTo up
