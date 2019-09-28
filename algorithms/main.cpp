@@ -7,6 +7,7 @@
 #include <string>
 
 #include <algorithm>
+#include <iterator>
 
 using std::cin;
 using std::cout;
@@ -20,6 +21,7 @@ using std::rand;
 using std::srand;
 
 using std::copy;
+using std::back_inserter;
 
 void fillInt(vector<int>& v, vector<int>::size_type s);
 string vectorToString(const vector<int>& v);
@@ -41,7 +43,7 @@ int main() {
     cout << "b: " << vectorToString(b) << endl;
 
     cout << "Performing an implemented copy operation: " << endl;
-    copyImplementation(a.begin(), a.end(), b.begin());
+    copyImplementationBackIterator(a.begin(), a.end(), back_inserter(b) /*b.begin()*/ );
     cout << "a: " << vectorToString(a) << endl;
     cout << "b: " << vectorToString(b) << endl;
 
@@ -83,4 +85,17 @@ void copyImplementation(vector<int>::iterator i1, vector<int>::iterator i2, vect
         ++i1;
     
     }*/
+}
+
+
+void copyImplementationBackIterator(vector<int>::iterator i1, vector<int>::iterator i2, std::back_inserter<std::vector<int> appendTo) {
+    //Alternatively, I can see it written this way (comment this out:)
+    while(i1 != i2) {
+        //Copy to iterator
+        *appendTo = *i1;
+        //Move appendTo up
+        ++appendTo; 
+        ++i1;
+    
+    }
 }
