@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <ctime>
 
+#include <vector>
 #include <sstream>
 #include <string>
 
@@ -9,7 +10,15 @@ using std::cin;
 using std::cout;
 using std::endl;
 
+using std::vector;
+using std::stringstream;
+using std::string;
+
+using std::rand;
+using std::srand;
+
 void fillInt(vector<int>& v, vector<int>::size_type s);
+string vectorToString(const vector<int>& v);
 
 
 int main() {
@@ -23,7 +32,8 @@ int main() {
 }
 
 void fillInt(vector<int>& v, vector<int>::size_type s) {
-    for(vector<int>::const_iterator i = v.begin(); i < s; ++i) {
+    vector<int>::const_iterator limit = v.begin() + s;
+    for(vector<int>::const_iterator i = v.begin(); i < limit; ++i) {
         v.push_back(rand());
     }
 }
