@@ -43,12 +43,38 @@ int main() {
     cout << "b: " << vectorToString(b) << endl;
 
     cout << "Performing an implemented copy operation: " << endl;
-    copyImplementationBackIterator(a.begin(), a.end(), back_inserter(b) /*b.begin()*/ );
+    copyImplementation(a.begin(), a.end(), b.begin());
     cout << "a: " << vectorToString(a) << endl;
     cout << "b: " << vectorToString(b) << endl;
+    cout << typeof back_inserter(b)<< endl;
 
     return 0;
 }
+
+/*void testBackInserter() {
+
+    vector<int> a, b;
+    fillInt(a, 10);
+    fillInt(b, 15);
+
+    cout << "a: " << vectorToString(a) << endl;
+    cout << "b: " << vectorToString(b) << endl;
+
+    cout << "Performing a copy operation: " << endl;
+
+
+    while(i1 != i2) {
+        //Copy to iterator
+        *appendTo = *i1;
+        //Move appendTo up
+        ++appendTo; 
+        ++i1;
+    
+    }
+    cout << "a: " << vectorToString(a) << endl;
+    cout << "b: " << vectorToString(b) << endl;
+
+}*/
 
 void fillInt(vector<int>& v, vector<int>::size_type s) {
     vector<int>::const_iterator limit = v.begin() + s;
