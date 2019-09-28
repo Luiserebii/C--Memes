@@ -49,9 +49,9 @@ int main() {
     appendTo = b.begin();
 
     for(vector<int>::iterator i = i1; i < i2; ++i) {
-//        cout << "i1:  " << *i1 << endl;
+        cout << "i1:  " << *i << endl;
         //Copy to iterator
-        *appendTo = *i1;
+        *appendTo = *i;
         //Move appendTo up
         ++appendTo;
     }
