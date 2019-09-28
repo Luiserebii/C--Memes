@@ -36,7 +36,7 @@ int main() {
     cout << "b: " << vectorToString(b) << endl;
 
     cout << "Performing a copy operation: " << endl;
-    copy(a.begin(), a.end(), --b.end());
+    copy(a.begin(), a.end(), b.begin());
 
     cout << "a: " << vectorToString(a) << endl;
     cout << "b: " << vectorToString(b) << endl;
@@ -59,4 +59,15 @@ string vectorToString(const vector<int>& v) {
     ss << *--v.end();
 
     return ss.str();
+}
+
+void copyImplementation(vector<int>::iterator i1, vector<int>::iterator i2, vector<int>::iterator appendTo) {
+    //Loop through each iterator, until end of iterator range
+    for(vector<int>::iterator i = i1; i < i2; ++i1) {
+        //Copy to iterator
+        *appendTo = *i1;
+        //Move appendTo up
+        ++appendTo;
+    }
+
 }
