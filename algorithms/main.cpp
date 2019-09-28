@@ -28,6 +28,9 @@ int main() {
     vector<int> a, b;
     fillInt(a, 10);
     fillInt(b, 15);
+    cout << "a: " << vectorToString(a) << endl;
+    cout << "b: " << vectorToString(b) << endl;
+
     return 0;
 }
 
