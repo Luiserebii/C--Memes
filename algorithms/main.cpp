@@ -6,6 +6,8 @@
 #include <sstream>
 #include <string>
 
+#include <algorithm>
+
 using std::cin;
 using std::cout;
 using std::endl;
@@ -16,6 +18,8 @@ using std::string;
 
 using std::rand;
 using std::srand;
+
+using std::copy;
 
 void fillInt(vector<int>& v, vector<int>::size_type s);
 string vectorToString(const vector<int>& v);
@@ -31,13 +35,19 @@ int main() {
     cout << "a: " << vectorToString(a) << endl;
     cout << "b: " << vectorToString(b) << endl;
 
+    cout << "Performing a copy operation: " << endl;
+    copy(a.begin(), a.end(), --b.end());
+
+    cout << "a: " << vectorToString(a) << endl;
+    cout << "b: " << vectorToString(b) << endl;
+
     return 0;
 }
 
 void fillInt(vector<int>& v, vector<int>::size_type s) {
     vector<int>::const_iterator limit = v.begin() + s;
     for(vector<int>::const_iterator i = v.begin(); i < limit; ++i) {
-        v.push_back(rand());
+        v.push_back(rand() % 1000);
     }
 }
 
