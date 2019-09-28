@@ -48,7 +48,7 @@ int main() {
     i2 = a.end();
     appendTo = b.begin();
 
-    for(vector<int>::iterator i = i1; i < i2; ++i1) {
+    for(vector<int>::iterator i = i1; i < i2; ++i) {
 //        cout << "i1:  " << *i1 << endl;
         //Copy to iterator
         *appendTo = *i1;
@@ -81,7 +81,7 @@ string vectorToString(const vector<int>& v) {
 
 void copyImplementation(vector<int>::iterator i1, vector<int>::iterator i2, vector<int>::iterator appendTo) {
     //Loop through each iterator, until end of iterator range
-    for(vector<int>::iterator i = i1; i < i2; ++i1) {
+    for(vector<int>::iterator i = i1; i < i2; ++i) {
         cout << "i1:  " << *i1 << endl;
         //Copy to iterator
         *appendTo = *i1;
