@@ -37,14 +37,10 @@ int main() {
 
     cout << "Performing a copy operation: " << endl;
     copy(a.begin(), a.end(), b.begin());
-
     cout << "a: " << vectorToString(a) << endl;
     cout << "b: " << vectorToString(b) << endl;
 
     cout << "Performing an implemented copy operation: " << endl;
-
-    fillInt(a, 10);
-    fillInt(b, 15);
     copyImplementation(a.begin(), a.end(), b.begin());
     cout << "a: " << vectorToString(a) << endl;
     cout << "b: " << vectorToString(b) << endl;
@@ -71,11 +67,20 @@ string vectorToString(const vector<int>& v) {
 
 void copyImplementation(vector<int>::iterator i1, vector<int>::iterator i2, vector<int>::iterator appendTo) {
     //Loop through each iterator, until end of iterator range
-    for(vector<int>::iterator i = i1; i < i2; ++i) {
+    for(vector<int>::iterator i = i1; i != i2; ++i) {
         //Copy to iterator
         *appendTo = *i;
         //Move appendTo up
         ++appendTo;
     }
-
+/*
+    //Alternatively, I can see it written this way (comment this out:)
+    while(i1 != i2) {
+        //Copy to iterator
+        *appendTo = *i1;
+        //Move appendTo up
+        ++appendTo; 
+        ++i1;
+    
+    }*/
 }
