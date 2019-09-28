@@ -38,7 +38,7 @@ int main() {
     cout << "b: " << vectorToString(b) << endl;
 
     cout << "Performing a copy operation: " << endl;
-    copy(a.begin(), a.end(), b.begin());
+    copy(a.begin(), a.end(), /*b.begin()*/ back_inserter(b));
     cout << "a: " << vectorToString(a) << endl;
     cout << "b: " << vectorToString(b) << endl;
 
@@ -88,14 +88,3 @@ void copyImplementation(vector<int>::iterator i1, vector<int>::iterator i2, vect
 }
 
 
-void copyImplementationBackIterator(vector<int>::iterator i1, vector<int>::iterator i2, std::back_inserter<std::vector<int> appendTo) {
-    //Alternatively, I can see it written this way (comment this out:)
-    while(i1 != i2) {
-        //Copy to iterator
-        *appendTo = *i1;
-        //Move appendTo up
-        ++appendTo; 
-        ++i1;
-    
-    }
-}
