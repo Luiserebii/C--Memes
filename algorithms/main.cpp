@@ -23,7 +23,7 @@ using std::copy;
 
 void fillInt(vector<int>& v, vector<int>::size_type s);
 string vectorToString(const vector<int>& v);
-
+void copyImplementation(vector<int>::iterator i1, vector<int>::iterator i2, vector<int>::iterator appendTo);
 
 int main() {
 
@@ -37,6 +37,12 @@ int main() {
 
     cout << "Performing a copy operation: " << endl;
     copy(a.begin(), a.end(), b.begin());
+
+    cout << "a: " << vectorToString(a) << endl;
+    cout << "b: " << vectorToString(b) << endl;
+
+    cout << "Performing an implemented copy operation: " << endl;
+    copyImplementation(a.begin(), a.end(), b.begin());
 
     cout << "a: " << vectorToString(a) << endl;
     cout << "b: " << vectorToString(b) << endl;
