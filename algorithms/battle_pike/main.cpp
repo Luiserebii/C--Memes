@@ -48,13 +48,15 @@ int main() {
 
     setSeed();
     vector<Pokemon> pkmn;
-
     //fill mons
+    fillPokemon(pkmn);
+
+    //Write mons to show filled mons
     writePokemon(cout, pkmn);
     
-    Status s = rollStatus(pkmn); //Pass reference
-    writeStatusFateDialogue(cout, statusFateDialogue, s);
-    writePokemon(cout, pkmn);
+//    Status s = rollStatus(pkmn); //Pass reference
+//    writeStatusFateDialogue(cout, statusFateDialogue, s);
+//    writePokemon(cout, pkmn);
 
     return 0;
 
@@ -64,12 +66,17 @@ void setSeed() {
     srand(time(NULL));
 }
 
-ostream& writePokemon(ostream& out, vector<Pokemon> pkmn) {
-
-
+void fillPokemon(vector<Pokemon>& pkmn) {
+    pkmn.push_back({"Sceptile", "HTY"});
+    pkmn.push_back({"Milotic", "HTY"});
+    pkmn.push_back({"Metagross", "HTY"});
 }
 
-string pokemonToString(vector<Pokemon> pkmn) {
+ostream& writePokemon(ostream& out, const vector<Pokemon>& pkmn) {
+    return out << pokemonToString(pkmn);
+}
+
+string pokemonToString(const vector<Pokemon>& pkmn) {
 
     stringstream ss;
     typedef vector<Pokemon>::const_iterator iter;
