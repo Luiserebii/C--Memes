@@ -15,7 +15,7 @@ using std::string;
 using std::stringstream;
 using std::vector;
 using std::ostream;
-
+using std::domain_error;
 
 /**
  *
@@ -56,6 +56,7 @@ ostream& writePokemon(ostream& out, const vector<Pokemon>& pkmn);
 string pokemonToString(const vector<Pokemon>& pkmn);
 Status rollStatus(vector<Pokemon>& pkmn);
 Status rollStatus();
+string statusToString(Status s);
 
 int main() {
 
@@ -95,7 +96,7 @@ string pokemonToString(const vector<Pokemon>& pkmn) {
     typedef vector<Pokemon>::const_iterator iter;
     for(iter i = pkmn.begin(); i != pkmn.end(); ++i) {
         ss << i->name;
-        if(i->status != HTY) ss << " [ " << i->status << " ]";
+        if(i->status != HTY) ss << " [ " << statusToString(i->status) << " ]";
         ss << endl;
     }
     return ss.str();
