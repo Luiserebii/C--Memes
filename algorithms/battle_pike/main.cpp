@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <algorithm>
 #include <cstdlib>
 #include <ctime>
@@ -8,6 +9,7 @@ using std::cin;
 using std::cout;
 using std::endl;
 
+using std::ostream;
 /**
  *
  * Program with a solid number of mons, structs with const. strings
@@ -16,8 +18,8 @@ using std::endl;
  * this status for each mon, use algs
  *
  **/
-
-enum Status { PAR, BRN, PSN, FRZ, SLP };
+//HTY = Healthy
+enum Status { HTY, PAR, BRN, PSN, FRZ, SLP, FNT };
 
 struct Pokemon {
     string name;
@@ -47,6 +49,7 @@ int main() {
     setSeed();
     vector<Pokemon> pkmn;
 
+    //fill mons
     writePokemon(cout, pkmn);
     
     Status s = rollStatus(pkmn); //Pass reference
@@ -61,4 +64,20 @@ void setSeed() {
     srand(time(NULL));
 }
 
+ostream& writePokemon(ostream& out, vector<Pokemon> pkmn) {
 
+
+}
+
+string pokemonToString(vector<Pokemon> pkmn) {
+
+    stringstream ss;
+    typedef vector<Pokemon>::const_iterator iter;
+    for(iter i = pkmn.begin(); i != pkmn.end(); ++i) {
+        out << pkmn.name;
+        if(pkmn.condition != HTY) out << " [" << pkmn.condition << " ]";
+        out << endl;
+    }
+    return ss.str();
+
+}
