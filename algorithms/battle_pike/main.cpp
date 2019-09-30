@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <cstdlib>
 #include <ctime>
+#include <exception>
 
 using std::cin;
 using std::cout;
@@ -53,6 +54,8 @@ void setSeed();
 void fillPokemon(vector<Pokemon>& pkmn);
 ostream& writePokemon(ostream& out, const vector<Pokemon>& pkmn);
 string pokemonToString(const vector<Pokemon>& pkmn);
+Status rollStatus(vector<Pokemon>& pkmn);
+Status rollStatus();
 
 int main() {
 
@@ -92,7 +95,7 @@ string pokemonToString(const vector<Pokemon>& pkmn) {
     typedef vector<Pokemon>::const_iterator iter;
     for(iter i = pkmn.begin(); i != pkmn.end(); ++i) {
         ss << i->name;
-        if(i->status != HTY) ss << " [" << i->status << " ]";
+        if(i->status != HTY) ss << " [ " << i->status << " ]";
         ss << endl;
     }
     return ss.str();
@@ -101,7 +104,7 @@ string pokemonToString(const vector<Pokemon>& pkmn) {
 
 Status rollStatus(vector<Pokemon>& pkmn) {
     Status s = rollStatus();
-    typedef vector<Pokemon>::const_iterator iter;
+    typedef vector<Pokemon>::iterator iter;
     for(iter i = pkmn.begin(); i != pkmn.end(); ++i) {
         int roll = rand() % 3;
         if(roll == 0) i->status = s;
@@ -116,4 +119,15 @@ Status rollStatus() {
     if(roll == 2) return PSN;
     if(roll == 3) return FRZ;
     if(roll == 4) return SLP;
+    throw domain_error("Status not in range for rolling a status condition at the Battle Pike!");
+}
+
+string statusToString(Status s) {
+    if(s == PAR) return "PAR";
+    if(s == BRN) return "BRN";
+    if(s == PSN) return "PSN";
+    if(s == FRZ) return "FRZ";
+    if(s == SLP) return "SLP";
+    if(s == FNT) return "FNT";
+    throw domain_error("Status not in range for string value!");
 }
