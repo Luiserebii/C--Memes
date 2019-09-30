@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <vector>
 #include <algorithm>
 #include <cstdlib>
 #include <ctime>
@@ -9,7 +10,12 @@ using std::cin;
 using std::cout;
 using std::endl;
 
+using std::string;
+using std::stringstream;
+using std::vector;
 using std::ostream;
+
+
 /**
  *
  * Program with a solid number of mons, structs with const. strings
@@ -24,7 +30,7 @@ enum Status { HTY, PAR, BRN, PSN, FRZ, SLP, FNT };
 struct Pokemon {
     string name;
     Status status;
-}
+};
 
 const string statusFateDialogue = 
     "Oh my!\
@@ -38,11 +44,15 @@ const string statusFateDialogue =
     My KIRLIA has a TIMID nature...\
     \
     It attacks without warning if it is startled by another person...\
-    Are you and your POKéMON all right?"
+    Are you and your POKéMON all right?";
 
 
 //Need to map condition to move
 
+void setSeed();
+void fillPokemon(vector<Pokemon>& pkmn);
+ostream& writePokemon(ostream& out, const vector<Pokemon>& pkmn);
+string pokemonToString(const vector<Pokemon>& pkmn);
 
 int main() {
 
@@ -67,9 +77,9 @@ void setSeed() {
 }
 
 void fillPokemon(vector<Pokemon>& pkmn) {
-    pkmn.push_back({"Sceptile", "HTY"});
-    pkmn.push_back({"Milotic", "HTY"});
-    pkmn.push_back({"Metagross", "HTY"});
+    pkmn.push_back({"Sceptile", HTY});
+    pkmn.push_back({"Milotic", HTY});
+    pkmn.push_back({"Metagross", HTY});
 }
 
 ostream& writePokemon(ostream& out, const vector<Pokemon>& pkmn) {
@@ -81,9 +91,9 @@ string pokemonToString(const vector<Pokemon>& pkmn) {
     stringstream ss;
     typedef vector<Pokemon>::const_iterator iter;
     for(iter i = pkmn.begin(); i != pkmn.end(); ++i) {
-        out << pkmn.name;
-        if(pkmn.condition != HTY) out << " [" << pkmn.condition << " ]";
-        out << endl;
+        ss << i->name;
+        if(i->status != HTY) ss << " [" << i->status << " ]";
+        ss << endl;
     }
     return ss.str();
 
