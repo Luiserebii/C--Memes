@@ -24,9 +24,34 @@ struct Pokemon {
     Status status;
 }
 
+const string statusFateDialogue = 
+    "Oh my!\
+    Watch out!\
+    Now, no!\
+    KIRLIA, stop that!\
+    Kirlia used [MOVE]!\
+    Look here! That's quite enough!\
+    ...\
+    I must apologize to you...\
+    My KIRLIA has a TIMID nature...\
+    \
+    It attacks without warning if it is startled by another person...\
+    Are you and your POKéMON all right?"
+
+
+//Need to map condition to move
+
+
 int main() {
 
     setSeed();
+    vector<Pokemon> pkmn;
+
+    writePokemon(cout, pkmn);
+    
+    Status s = rollStatus(pkmn); //Pass reference
+    writeStatusFateDialogue(cout, statusFateDialogue, s);
+    writePokemon(cout, pkmn);
 
     return 0;
 
