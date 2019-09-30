@@ -64,9 +64,9 @@ int main() {
     //Write mons to show filled mons
     writePokemon(cout, pkmn);
     
-//    Status s = rollStatus(pkmn); //Pass reference
+    Status s = rollStatus(pkmn); //Pass reference
 //    writeStatusFateDialogue(cout, statusFateDialogue, s);
-//    writePokemon(cout, pkmn);
+    writePokemon(cout, pkmn);
 
     return 0;
 
@@ -97,4 +97,23 @@ string pokemonToString(const vector<Pokemon>& pkmn) {
     }
     return ss.str();
 
+}
+
+Status rollStatus(vector<Pokemon>& pkmn) {
+    Status s = rollStatus();
+    typedef vector<Pokemon>::const_iterator iter;
+    for(iter i = pkmn.begin(); i != pkmn.end(); ++i) {
+        int roll = rand() % 3;
+        if(roll == 0) i->status = s;
+    }
+    return s;
+}
+
+Status rollStatus() {
+    int roll = rand() % 5;
+    if(roll == 0) return PAR;
+    if(roll == 1) return BRN;
+    if(roll == 2) return PSN;
+    if(roll == 3) return FRZ;
+    if(roll == 4) return SLP;
 }
