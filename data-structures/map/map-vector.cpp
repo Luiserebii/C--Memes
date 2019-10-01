@@ -12,11 +12,19 @@ using std::vector;
 using std::string;
 
 enum Meme { LOL, LMAO, XD }
+typedef map<Meme, string> MemeMapping;
+
+
+
+const MemeMapping memeNames = loadMemeNames();
 
 int main() {
 
     //Note the "> >" at the end; to prevent confusion with >> operator
     map<Meme, vector<string> > m;
+    loadMemes(m);
+    
+    
 
     return 0;
 }
@@ -31,4 +39,18 @@ loadMemes(map<Meme, vector<string> >& m) {
     m[XD].push_back("Pokemon XD: Gale of Darkness");
     m[XD].push_back("I am ready to XD if you are");
     m[XD].push_back("Has anyone told you what lovely XD you have?");
+}
+
+memesToString(const map<Meme, vector<string> >& m) {
+    string str = "";
+    
+
+}
+
+MemeMapping loadMemeNames() {
+    MemeMapping m;
+    m[LOL] = "LOL";
+    m[LMAO] = "LMAO";
+    m[XD] = "XD";
+    return m;
 }
