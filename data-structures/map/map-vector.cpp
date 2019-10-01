@@ -50,6 +50,9 @@ string memesToString(const map<Meme, vector<string> >& m) {
         //Grab first pair element
         //Print the string name of the enum
         const Meme memeEnum = i->first;
+        //NOTE: Seems like even when using find() to grab the iterator, we will be using the -> operator
+        //shortcut anyways. In general, good rule of thumb to remember using: ->first or ->second when
+        //getting any kind of iterator back from a map
         const string memeStr = memeNames.find(memeEnum)->second;
         str += "[ " + memeStr + " ]" + "\n";
 
