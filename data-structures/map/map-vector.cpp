@@ -49,7 +49,9 @@ string memesToString(const map<Meme, vector<string> >& m) {
     for(memeIter i = m.begin(); i != m.end(); ++i) {
         //Grab first pair element
         //Print the string name of the enum
-        str += "[ " + i->first + " ]" + "\n";
+        const Meme memeEnum = i->first;
+        const string memeStr = memeNames.find(memeEnum)->second;
+        str += "[ " + memeStr + " ]" + "\n";
 
         //Iterate through the vector<string> and print them each
         for(vector<string>::const_iterator j = i->second.begin(); j != i->second.end(); ++j) {
