@@ -43,8 +43,19 @@ loadMemes(map<Meme, vector<string> >& m) {
 
 memesToString(const map<Meme, vector<string> >& m) {
     string str = "";
-    
+    typedef map<Meme, vector<string> >::const_iterator memeIter;
+    for(memeIter i = m.begin(); i != m.end(); ++i) {
+        //Grab first pair element
+        //Print the string name of the enum
+        str += "[ " + i->first + " ]" + "\n";
 
+        //Iterate through the vector<string> and print them each
+        for(vector<string>::const_iterator j = i->second.begin(); j != i->second.end(); ++j) {
+            str += "      " + *j + "\n";
+        }
+        str += "====================================\n";
+    }
+    return str;
 }
 
 MemeMapping loadMemeNames() {
