@@ -1,3 +1,3 @@
 #!/bin/sh
 
-g++ main.cpp && ./a.out
+g++ main.cpp book/*.cpp && ./a.out
