@@ -27,7 +27,7 @@ class Book {
         void setDescription(const string& d);
 
         string toString();
-}
+};
 
 Book::Book() {
     title = "Sample Title";
@@ -47,15 +47,15 @@ string Book::getDescription() {
     return description;
 }
 
-void setTitle(const string& t) {
+void Book::setTitle(const string& t) {
     title = t;
 }
 
-void setAuthor(const string& a) {
+void Book::setAuthor(const string& a) {
     author = a;
 }
 
-void setDescription(const string& d) {
+void Book::setDescription(const string& d) {
     description = d;
 }
 
