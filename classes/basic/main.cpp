@@ -18,13 +18,13 @@ class Book {
         
         Book();
  
-        void setTitle();
-        void setAuthor();
-        void setDescription();
-
         string getTitle();
         string getAuthor();
         string getDescription();
+
+        void setTitle(const string& t);
+        void setAuthor(const string& a);
+        void setDescription(const string& d);
 
         string toString();
 }
@@ -47,8 +47,20 @@ string Book::getDescription() {
     return description;
 }
 
+void setTitle(const string& t) {
+    title = t;
+}
+
+void setAuthor(const string& a) {
+    author = a;
+}
+
+void setDescription(const string& d) {
+    description = d;
+}
+
 string Book::toString() {
-    
+    return title + "\n" + author + "\n" + description;
 }
 
 int main() {
