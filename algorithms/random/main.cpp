@@ -1,7 +1,9 @@
 #include <iostream>
 #include <vector>
 
-bool isEven(double d)
+using std::vector;
+
+bool isEven(double d);
 
 int main() {
     
