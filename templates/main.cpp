@@ -13,7 +13,6 @@ int main() {
     return 0;
 }
 
-//template <class T>
-T returnVar(T val){
+template <class T> T returnVar(T val){
     return val;
 }
