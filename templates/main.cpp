@@ -3,17 +3,17 @@
 using std::cout;
 using std::endl;
 
-template <class Fuck>
-Fuck justReturnFuck(Fuck f);
+template <class T>
+T returnVar(T val);
 
 int main() {
 
-    int meme = justReturnFuck(12);
-    cout << "FUCK: " << meme << endl;
+    int meme = returnVar(12);
+    cout << "AAAAA: " << meme << endl;
     return 0;
 }
 
-template <class Fuck> 
-Fuck justReturnFuck(Fuck f){
-    return f;
+template <class T> 
+T returnVar(T val){
+    return val;
 }
