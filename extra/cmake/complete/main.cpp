@@ -1,5 +1,5 @@
 #include <iostream>
-#include "book/book.h"
+#include "book.h"
 
 using std::cin;
 using std::cout;
