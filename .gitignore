@@ -6,6 +6,5 @@ a.out
 build
 CMakeCache.txt
 CMakeFiles
-CMakeLists.txt
 Makefile
 *.cmake
