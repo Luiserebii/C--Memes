@@ -3,6 +3,7 @@
 a.out
 
 # For CMake
+build
 CMakeCache.txt
 CMakeFiles
 CMakeLists.txt
