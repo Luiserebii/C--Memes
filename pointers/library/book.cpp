@@ -28,6 +28,10 @@ void Book::setAuthor(const string s) {
     author = s;
 }
 
+bool isEmpty() {
+    return (title == "" && author == "");
+}
+
 string Book::toString() {
     stringstream ss;
     ss << "Title: " << title << endl

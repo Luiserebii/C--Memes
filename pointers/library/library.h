@@ -1,6 +1,6 @@
 #ifndef GUARD_LIBRARY_H
 #define GUARD_LIBRARY_H
-#define CAPACITY 10
+#define MAX_CAPACITY 10
 
 #include "book.h"
 #include <iostream>
@@ -8,7 +8,7 @@
 
 class Library {
     private:
-        Book books[CAPACITY];
+        Book books[MAX_CAPACITY];
     public:
         Library();
 
@@ -19,7 +19,7 @@ class Library {
 
         //Output functions
         std::string toString();
-        std::ostream write();
+        std::ostream& write(std::ostream& out);
         void output();
 
 };
