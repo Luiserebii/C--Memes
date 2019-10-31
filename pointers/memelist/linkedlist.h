@@ -11,6 +11,8 @@ class LinkedList {
     public:
         LinkedList();
 
+        void push_back(T val);
+
         Node<T>* getHead() const;
         void setHead(Node<T>* n);
 
@@ -20,6 +22,28 @@ class LinkedList {
 template <class T>
 LinkedList<T>::LinkedList(): head(nullptr) {
     
+}
+
+
+template <class T>
+void LinkedList<T>::push_back(T val) {
+    if(head != nullptr) {
+        Node<T>* n = head;
+        while(n->next != nullptr) {
+            n = n->next; //Iterate upwards
+        }
+
+        //Create our new node
+        Node<T> n = new Node<T>(val);
+
+        //Set the pointer of the newest end
+        n->next = &n;
+
+    } else {
+        //In the case that we're blank, let's generate a new node and stick the value in:
+        Node<T> n = new Node<T>(val);
+        head = &n;
+    }
 }
 
 template <class T>
