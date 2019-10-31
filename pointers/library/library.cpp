@@ -1,19 +1,31 @@
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <stdexcept>
 
 using std::string;
+using std::stringstream;
 using std::domain_error;
 using std::ostream;
+using std::endl;
 
 Library::Library() {
 
 }
 
+Book* Library::begin() {
+    return books;
+}
+
+Book* Library::end() {
+    return books + MAX_CAPACITY;
+}
+
 int Library::addBook(const Book b) {
-    for(size_t i = 0; i < MAX_CAPACITY; ++i) {
-        if(books[i].isEmpty()) {
-            books[i] = b;
+    Book* b = begin();
+    for(Book* bb < end()) {
+        if(b->isEmpty()) {
+            *b = b;
         }
     }
     //If we reached here, there's no more space!
@@ -25,11 +37,11 @@ Book Library::getBook(size_t index) {
 }
 
 string Library::toString() {
-    
+    for(size)
 }
 
 ostream& write(ostream& out) {
-
+    out << toString();
 }
 
 /*
