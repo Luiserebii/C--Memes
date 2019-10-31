@@ -9,7 +9,7 @@ class LinkedList {
         LinkedList();
 
         Node<T>* getHead() const;
-        void setHead(Node<T> n);
+        void setHead(Node<T>* n);
 
 
 };
@@ -26,7 +26,7 @@ Node<T>* LinkedList<T>::getHead() const {
 
 template <class T>
 void LinkedList<T>::setHead(Node<T>* n) {
-    head = h;
+    head = n;
 }
 
 int main() {
