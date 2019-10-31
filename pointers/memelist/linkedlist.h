@@ -1,3 +1,6 @@
+#ifndef GUARD_MEMELIST_h
+#define GUARD_MEMELIST_h
+
 #include "node.h"
 
 template <class T>
@@ -29,8 +32,4 @@ void LinkedList<T>::setHead(Node<T>* n) {
     head = n;
 }
 
-int main() {
-
-
-
-}
+#endif
