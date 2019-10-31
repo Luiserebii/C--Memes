@@ -16,6 +16,10 @@ class LinkedList {
         LinkedList();
 
         void push_back(T val);
+        void pop();
+
+        Node<T>* begin() const;
+        Node<T>* end() const;
 
         T get(size_t index);
         size_t size() const;
@@ -54,6 +58,25 @@ void LinkedList<T>::push_back(T val) {
         head = n;
         cout << "Making a new head: " << val << endl;
     }
+}
+
+template <class T>
+void LinkedList<T>::pop() {
+    
+}
+
+template <class T>
+Node<T>* LinkedList<T>::begin() {
+    return head;
+}
+
+template <class T>
+Node<T>* LinkedList<T>::end() {
+    Node<T>* n = head;
+    while(n->getNext() != nullptr) {
+        n = n->getNext();
+    }
+    return n;
 }
 
 template <class T>
