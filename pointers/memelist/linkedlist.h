@@ -34,10 +34,10 @@ void LinkedList<T>::push_back(T val) {
         }
 
         //Create our new node
-        Node<T> n = new Node<T>(val);
+        Node<T> newNode = new Node<T>(val);
 
         //Set the pointer of the newest end
-        n->next = &n;
+        n->next = &newNode;
 
     } else {
         //In the case that we're blank, let's generate a new node and stick the value in:
