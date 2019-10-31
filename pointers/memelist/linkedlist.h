@@ -29,20 +29,20 @@ template <class T>
 void LinkedList<T>::push_back(T val) {
     if(head != nullptr) {
         Node<T>* n = head;
-        while(n->next != nullptr) {
-            n = n->next; //Iterate upwards
+        while(n->getNext() != nullptr) {
+            n = n->getNext(); //Iterate upwards
         }
 
         //Create our new node
-        Node<T> newNode = new Node<T>(val);
+        Node<T>* newNode = new Node<T>(val);
 
         //Set the pointer of the newest end
-        n->next = &newNode;
+        n->setNext(newNode);
 
     } else {
         //In the case that we're blank, let's generate a new node and stick the value in:
-        Node<T> n = new Node<T>(val);
-        head = &n;
+        Node<T>* n = new Node<T>(val);
+        head = n;
     }
 }
 
