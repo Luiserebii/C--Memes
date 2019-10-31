@@ -14,4 +14,7 @@ int main() {
     meme.push_back("anus");
     meme.push_back("uguu");
     meme.push_back("holy fuck");
+    string cock = meme.get(1);
+    cout << cock << endl;
+
 }

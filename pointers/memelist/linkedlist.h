@@ -1,6 +1,7 @@
 #ifndef GUARD_MEMELIST_h
 #define GUARD_MEMELIST_h
 
+#include <cstddef>
 #include "node.h"
 
 template <class T>
@@ -13,6 +14,9 @@ class LinkedList {
 
         void push_back(T val);
 
+        T get(size_t index);
+
+        //Accessors/Mutators
         Node<T>* getHead() const;
         void setHead(Node<T>* n);
 
@@ -44,6 +48,20 @@ void LinkedList<T>::push_back(T val) {
         Node<T>* n = new Node<T>(val);
         head = n;
     }
+}
+
+template <class T>
+T LinkedList<T>::get(size_t index) {
+    //Start from the head
+    Node<T>* n = head;
+    //Iterate upwards, based on index
+    for(size_t i = 0; i < index; ++i) {
+        n = n->getNext();
+        if(n == nullptr) {
+            throw "Out of bounds";
+        }
+    }
+    return n->getVal();
 }
 
 template <class T>
