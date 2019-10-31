@@ -64,6 +64,21 @@ void LinkedList<T>::push_back(T val) {
 
 template <class T>
 void LinkedList<T>::pop() {
+    if(head == end()) {
+        throw "No more elements available to pop!";
+    } else if(head->getNext() == end()) {
+        head = end();
+    } else {
+        Node<T>* n = head;
+        while(n->getNext()->getNext() != end()) {
+            n = n->getNext();
+        }
+        //Destroy the last node
+        Node<T>* last = n->getNext();
+        delete last;
+        //Set the new last node to last
+        n->setNext(end());
+    }
 }
 
 template <class T>
