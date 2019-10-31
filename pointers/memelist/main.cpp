@@ -17,4 +17,10 @@ int main() {
     string cock = meme.get(1);
     cout << cock << endl;
     cout << "SIZE: " << meme.size() << endl;
+    meme.pop();
+    cout << "SIZE POST-POP: " << meme.size() << endl;
+    meme.pop();
+    cout << "SIZE POST-POP: " << meme.size() << endl;
+    meme.pop();
+    cout << "SIZE POST-POP: " << meme.size() << endl;
 }

@@ -2,8 +2,10 @@
 #define GUARD_MEMELIST_h
 
 #include <cstddef>
+#include <stdexcept>
 #include "node.h"
 #include <iostream>
+
 
 using std::cout; 
 using std::endl;
@@ -65,7 +67,7 @@ void LinkedList<T>::push_back(T val) {
 template <class T>
 void LinkedList<T>::pop() {
     if(head == end()) {
-        throw "No more elements available to pop!";
+        throw std::out_of_range("No more elements available to pop!");
     } else if(head->getNext() == end()) {
         head = end();
     } else {
@@ -103,7 +105,7 @@ Node<T>* LinkedList<T>::last() const {
 
 template <class T>
 T LinkedList<T>::get(size_t index) {
-    if(index >= size()) throw "Out of bounds";
+    if(index >= size()) throw std::out_of_range("Out of bounds");
 
     //Start from the head
     Node<T>* n = head;
