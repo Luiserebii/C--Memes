@@ -15,12 +15,12 @@ class Book {
         std::string getTitle();
         std::string getAuthor();
 
-        void setTitle(const string s);
-        void setAuthor(const string s);
+        void setTitle(const std::string s);
+        void setAuthor(const std::string s);
 
         //Output
         std::string toString();
 
-}
+};
 
 #endif

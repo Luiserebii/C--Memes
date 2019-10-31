@@ -28,9 +28,9 @@ void Book::setAuthor(const string s) {
     author = s;
 }
 
-string toString() {
+string Book::toString() {
     stringstream ss;
-    ss << "Title: " << title << endl;
+    ss << "Title: " << title << endl
         << "Author" << author << endl;
     return ss.str();
 }
