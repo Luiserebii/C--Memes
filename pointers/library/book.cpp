@@ -1,7 +1,12 @@
 #include "book.h"
 
+#include <iostream>
 #include <string>
+#include <sstream>
+
+using std::endl;
 using std::string;
+using std::stringstream;
 
 Book::Book(const string t, const string a): title(t), author(a) {
     
@@ -14,6 +19,22 @@ string Book::getTitle() {
 string Book::getAuthor() {
     return author;
 }
+
+void Book::setTitle(const string s) {
+    title = s;
+}
+
+void Book::setAuthor(const string s) {
+    author = s;
+}
+
+string toString() {
+    stringstream ss;
+    ss << "Title: " << title << endl;
+        << "Author" << author << endl;
+    return ss.str();
+}
+
 /*
 class Book {
     
