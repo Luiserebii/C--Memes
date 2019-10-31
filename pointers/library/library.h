@@ -13,11 +13,14 @@ class Library {
         Library();
 
         int addBook(const Book b);
+
+        //Accessors
+        Book getBook(size_t index);
+
+        //Output functions
         std::string toString();
         std::ostream write();
         void output();
-
-
 
 };
 
