@@ -25,7 +25,7 @@ class Node {
 template <class T>
 Node<T>::Node(T v) {
     val = v;
-    next = NULL;
+    next = nullptr;
 }
 
 template <class T>
@@ -35,22 +35,22 @@ Node<T>::Node(T v, Node* n) {
 }
 
 template <class T>
-Node<T>::getVal() const {
+T Node<T>::getVal() const {
     return val;
 }
 
 template <class T>
-Node<T>::getNext() const {
+Node<T>* Node<T>::getNext() const {
     return next;
 }
 
 template <class T>
-Node<T>::setVal(T v) {
+void Node<T>::setVal(T v) {
     val = v;
 }
 
 template <class T>
-Node<T>::setNext(Node* n) {
+void Node<T>::setNext(Node* n) {
     next = n;
 }
 
