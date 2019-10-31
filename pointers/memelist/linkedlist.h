@@ -18,6 +18,7 @@ class LinkedList {
         void push_back(T val);
 
         T get(size_t index);
+        size_t size() const;
 
         //Accessors/Mutators
         Node<T>* getHead() const;
@@ -67,6 +68,23 @@ T LinkedList<T>::get(size_t index) {
         }
     }
     return n->getVal();
+}
+
+template <class T>
+size_t LinkedList<T>::size() const {
+
+    cout << "MEME" << endl;
+    size_t s = 0;
+    for(Node<T>* n = head; n->getNext() != nullptr; ++s) {
+        n = n->getNext();
+        cout << "IT: " << n->getVal() << endl;
+    }
+/*    Node<T>* n = head;
+    while(n->getNext() != nullptr) {
+        n = n->getNext();
+        ++s;
+    }*/
+    return s;
 }
 
 template <class T>
