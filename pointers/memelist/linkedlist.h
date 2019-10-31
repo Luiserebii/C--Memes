@@ -21,6 +21,8 @@ class LinkedList {
         Node<T>* begin() const;
         Node<T>* end() const;
 
+        Node<T>* last() const;
+
         T get(size_t index);
         size_t size() const;
 
@@ -39,9 +41,9 @@ LinkedList<T>::LinkedList(): head(nullptr) {
 
 template <class T>
 void LinkedList<T>::push_back(T val) {
-    if(head != nullptr) {
+    if(head != end()) {
         Node<T>* n = head;
-        while(n->getNext() != nullptr) {
+        while(n->getNext() != end()) {
             n = n->getNext(); //Iterate upwards
         }
 
@@ -62,18 +64,23 @@ void LinkedList<T>::push_back(T val) {
 
 template <class T>
 void LinkedList<T>::pop() {
-    
 }
 
 template <class T>
-Node<T>* LinkedList<T>::begin() {
+Node<T>* LinkedList<T>::begin() const {
     return head;
 }
 
+//Since nullptr will always signify the +1 after the end of the range, we return this
 template <class T>
-Node<T>* LinkedList<T>::end() {
+Node<T>* LinkedList<T>::end() const {
+    return nullptr; 
+}
+
+template <class T>
+Node<T>* LinkedList<T>::last() const {
     Node<T>* n = head;
-    while(n->getNext() != nullptr) {
+    while(n->getNext() != end()) {
         n = n->getNext();
     }
     return n;
@@ -81,25 +88,25 @@ Node<T>* LinkedList<T>::end() {
 
 template <class T>
 T LinkedList<T>::get(size_t index) {
+    if(index >= size()) throw "Out of bounds";
+
     //Start from the head
     Node<T>* n = head;
     //Iterate upwards, based on index
     for(size_t i = 0; i < index; ++i) {
         n = n->getNext();
-        if(n == nullptr) {
-            throw "Out of bounds";
-        }
     }
     return n->getVal();
 }
 
+//Arguably, this is fairly expensive as an operation
 template <class T>
 size_t LinkedList<T>::size() const {
 
-    if(head != nullptr) {
+    if(head != end()) {
         //Start at one, including the valid one we have at head
         size_t s = 1;
-        for(Node<T>* n = head; n->getNext() != nullptr; ++s) {
+        for(Node<T>* n = head; n->getNext() != end(); ++s) {
             n = n->getNext();
             cout << "IT: " << n->getVal() << endl;
         }
