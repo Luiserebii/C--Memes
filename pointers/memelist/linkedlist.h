@@ -15,6 +15,9 @@ class LinkedList {
         Node<T>* head;
         
     public:
+        typedef Node<T>* iterator;
+        typedef const Node<T>* const_iterator;
+
         LinkedList();
 
         void push_back(T val);

@@ -16,6 +16,11 @@ int main() {
     meme.push_back("holy fuck");
     string cock = meme.get(1);
     cout << cock << endl;
+
+    for(LinkedList<string>::iterator i = meme.begin(); i != meme.end(); i = i->getNext()) {
+        cout << " | ELEMENT: " << i->getVal() << endl;
+    }
+
     cout << "SIZE: " << meme.size() << endl;
     meme.pop();
     cout << "SIZE POST-POP: " << meme.size() << endl;
@@ -23,4 +28,8 @@ int main() {
     cout << "SIZE POST-POP: " << meme.size() << endl;
     meme.pop();
     cout << "SIZE POST-POP: " << meme.size() << endl;
+
+
 }
+
+
