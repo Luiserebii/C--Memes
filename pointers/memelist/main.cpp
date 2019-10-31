@@ -10,7 +10,7 @@ using std::string;
 
 int main() {
     LinkedList<string> meme;
-
+    cout << "SIZE: " << meme.size() << endl;
     meme.push_back("anus");
     meme.push_back("uguu");
     meme.push_back("holy fuck");

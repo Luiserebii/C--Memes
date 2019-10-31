@@ -73,18 +73,17 @@ T LinkedList<T>::get(size_t index) {
 template <class T>
 size_t LinkedList<T>::size() const {
 
-    cout << "MEME" << endl;
-    size_t s = 0;
-    for(Node<T>* n = head; n->getNext() != nullptr; ++s) {
-        n = n->getNext();
-        cout << "IT: " << n->getVal() << endl;
+    if(head != nullptr) {
+        //Start at one, including the valid one we have at head
+        size_t s = 1;
+        for(Node<T>* n = head; n->getNext() != nullptr; ++s) {
+            n = n->getNext();
+            cout << "IT: " << n->getVal() << endl;
+        }
+        return s;
+    } else {
+        return 0;
     }
-/*    Node<T>* n = head;
-    while(n->getNext() != nullptr) {
-        n = n->getNext();
-        ++s;
-    }*/
-    return s;
 }
 
 template <class T>
