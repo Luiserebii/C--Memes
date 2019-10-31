@@ -22,10 +22,10 @@ Book* Library::end() {
 }
 
 int Library::addBook(const Book b) {
-    Book* b = begin();
-    for(Book* bb < end()) {
-        if(b->isEmpty()) {
-            *b = b;
+    for(Library::const_iterator i = begin(); i < end(); ++i) {
+        if(i->isEmpty()) {
+            *i = i;
+            return i - begin();
         }
     }
     //If we reached here, there's no more space!

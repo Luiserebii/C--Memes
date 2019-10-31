@@ -10,6 +10,9 @@ class Library {
     private:
         Book books[MAX_CAPACITY];
     public:
+        typedef Book* iterator;
+        typedef const Book* const_iterator;
+
         Library();
 
         int addBook(const Book b);
