@@ -17,6 +17,8 @@ class Node {
         T getVal() const;
         Node* getNext() const;
 
+        void setVal(T v);
+        void setNext(Node* n);
 
 };
 
@@ -40,6 +42,16 @@ Node<T>::getVal() const {
 template <class T>
 Node<T>::getNext() const {
     return next;
+}
+
+template <class T>
+Node<T>::setVal(T v) {
+    val = v;
+}
+
+template <class T>
+Node<T>::setNext(Node* n) {
+    next = n;
 }
 
 #endif
