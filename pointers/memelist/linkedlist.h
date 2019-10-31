@@ -3,7 +3,10 @@
 
 #include <cstddef>
 #include "node.h"
+#include <iostream>
 
+using std::cout; 
+using std::endl;
 template <class T>
 class LinkedList {
     private:
@@ -42,11 +45,13 @@ void LinkedList<T>::push_back(T val) {
 
         //Set the pointer of the newest end
         n->setNext(newNode);
+        cout << "Adding a new node: " << val << endl;
 
     } else {
         //In the case that we're blank, let's generate a new node and stick the value in:
         Node<T>* n = new Node<T>(val);
         head = n;
+        cout << "Making a new head: " << val << endl;
     }
 }
 
