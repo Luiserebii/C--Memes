@@ -2,7 +2,7 @@
 #define GUARD_LIBRARY_H
 #define MAX_CAPACITY 10
 
-#include "book.h"
+#include "../book/book.h"
 #include <iostream>
 #include <string>
 
