@@ -19,7 +19,7 @@ class Book {
         void setTitle(const std::string s);
         void setAuthor(const std::string s);
 
-        bool isEmpty();
+        bool isEmpty() const;
 
         //Output
         std::string toString() const;

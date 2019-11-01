@@ -49,7 +49,9 @@ Book Library::getBook(size_t index) {
 string Library::toString() const {
     stringstream ss;
     for(Library::const_iterator i = begin(); i < end(); ++i) {
-        ss << i->toString() << endl;
+        if(!i->isEmpty()) {
+            ss << i->toString() << endl;
+        }
     }
     return ss.str();
 }

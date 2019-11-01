@@ -32,14 +32,14 @@ void Book::setAuthor(const string s) {
     author = s;
 }
 
-bool Book::isEmpty() {
+bool Book::isEmpty() const {
     return (title == "" && author == "");
 }
 
 string Book::toString() const {
     stringstream ss;
     ss << "Title: " << title << endl
-        << "Author" << author << endl;
+        << "Author: " << author << endl;
     return ss.str();
 }
 
