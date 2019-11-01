@@ -15,13 +15,16 @@ class Library {
 
         Library();
 
+        iterator begin();
+        iterator end();
+
         int addBook(const Book b);
 
         //Accessors
         Book getBook(size_t index);
 
         //Output functions
-        std::string toString();
+        std::string toString() const;
         std::ostream& write(std::ostream& out);
         void output();
 

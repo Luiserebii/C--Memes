@@ -9,11 +9,12 @@ class Book {
         std::string author;
 
     public:
+        Book();
         Book(const std::string title, const std::string author);
 
         //Acessors/Mutators
-        std::string getTitle();
-        std::string getAuthor();
+        std::string getTitle() const;
+        std::string getAuthor() const;
 
         void setTitle(const std::string s);
         void setAuthor(const std::string s);
@@ -21,7 +22,7 @@ class Book {
         bool isEmpty();
 
         //Output
-        std::string toString();
+        std::string toString() const;
 
 };
 

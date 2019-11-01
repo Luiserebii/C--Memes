@@ -3,6 +3,8 @@
 #include <sstream>
 #include <stdexcept>
 
+#include "library.h"
+
 using std::string;
 using std::stringstream;
 using std::domain_error;
@@ -13,18 +15,18 @@ Library::Library() {
 
 }
 
-Book* Library::begin() {
+Library::iterator Library::begin() {
     return books;
 }
 
-Book* Library::end() {
+Library::iterator Library::end() {
     return books + MAX_CAPACITY;
 }
 
 int Library::addBook(const Book b) {
-    for(Library::const_iterator i = begin(); i < end(); ++i) {
+    for(Library::iterator i = begin(); i < end(); ++i) {
         if(i->isEmpty()) {
-            *i = i;
+            *i = b;
             return i - begin();
         }
     }
@@ -36,15 +38,15 @@ Book Library::getBook(size_t index) {
     return books[index];
 }
 
-string Library::toString() {
+string Library::toString() const {
     stringstream ss;
     for(Library::const_iterator i = begin(); i < end(); ++i) {
-        ss << i->toString() < endl;
+        ss << i->toString() << endl;
     }
     return ss.str();
 }
 
-ostream& write(ostream& out) {
+ostream& Library::write(ostream& out) {
     out << toString();
 }
 

@@ -8,15 +8,19 @@ using std::endl;
 using std::string;
 using std::stringstream;
 
+Book::Book() {
+
+}
+
 Book::Book(const string t, const string a): title(t), author(a) {
     
 }
 
-string Book::getTitle() {
+string Book::getTitle() const {
     return title;
 }
 
-string Book::getAuthor() {
+string Book::getAuthor() const {
     return author;
 }
 
@@ -28,11 +32,11 @@ void Book::setAuthor(const string s) {
     author = s;
 }
 
-bool isEmpty() {
+bool Book::isEmpty() {
     return (title == "" && author == "");
 }
 
-string Book::toString() {
+string Book::toString() const {
     stringstream ss;
     ss << "Title: " << title << endl
         << "Author" << author << endl;
