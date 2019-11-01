@@ -23,6 +23,14 @@ Library::iterator Library::end() {
     return books + MAX_CAPACITY;
 }
 
+Library::const_iterator Library::begin() const {
+    return books;
+}
+
+Library::const_iterator Library::end() const {
+    return books + MAX_CAPACITY;
+}
+
 int Library::addBook(const Book b) {
     for(Library::iterator i = begin(); i < end(); ++i) {
         if(i->isEmpty()) {
