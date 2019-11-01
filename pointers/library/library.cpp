@@ -37,7 +37,11 @@ Book Library::getBook(size_t index) {
 }
 
 string Library::toString() {
-    for(size)
+    stringstream ss;
+    for(Library::const_iterator i = begin(); i < end(); ++i) {
+        ss << i->toString() < endl;
+    }
+    return ss.str();
 }
 
 ostream& write(ostream& out) {
