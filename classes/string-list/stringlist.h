@@ -21,7 +21,11 @@ class StringList {
 
         //Copy, assign, destruct
         StringList(const StringList& s);
+        StringList& operator=(const StringList& s);
         ~StringList();
+
+        char* begin() const { return head; };
+        char* end() const { return tail; };
 
         size_t size() const;
 

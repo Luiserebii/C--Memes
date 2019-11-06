@@ -38,7 +38,7 @@ StringList::StringList(const StringList& s) {
 }
 
 //Assignment operator
-StringList::operator=(const StringList& s) {
+StringList& StringList::operator=(const StringList& s) {
 
     if(this != &s) {
         //Obliterate
@@ -64,7 +64,7 @@ StringList::~StringList() {
 }
 
 
-size_t size() const {
+size_t StringList::size() const {
     return tail - head;
 }
 
