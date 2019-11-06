@@ -23,6 +23,10 @@ class String {
         // [] operator obtains a char from the std::string
         String operator+(const String sO);
         String operator-(const String sO);
+        String operator*(int n);
+        String operator/(int n);
+        char operator[](size_t i);
+
 };
 
 #endif

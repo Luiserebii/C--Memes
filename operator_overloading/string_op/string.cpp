@@ -20,3 +20,20 @@ String String::operator-(const String s0) {
     //If we hit here, just return what we have
     return s;
 }
+
+String String::operator*(int n) {
+    string str = "";
+    for(int i = 0; i < n; ++i) {
+        str += s;
+    }
+    return String(str);
+}
+
+String String::operator/(int n) {
+    int pos = s.length()/n;
+    return String(s.substr(0, pos));
+}
+
+char String::operator[](size_t i) {
+    return s.at(i);
+}
