@@ -19,6 +19,12 @@ class StringList {
         StringList(size_t size);
         StringList(std::string s);
 
+        //Copy, assign, destruct
+        StringList(const StringList& s);
+        ~StringList();
+
+        size_t size() const;
+
         std::string toString() const;
         std::ostream& write(std::ostream& out = std::cout) const;
 };

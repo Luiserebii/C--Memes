@@ -29,6 +29,30 @@ StringList::StringList(string s) {
     copy(s.begin(), s.end(), head);
 }
 
+//Copy constructor
+StringList::StringList(const StringList& s) {
+    size_t size = s.size();
+    head = new char[size];
+    tail = head + size;
+    copy(s.begin(), s.end(), head);
+}
+
+//Assignment operator
+StringList::operator=
+
+//Destructor
+StringList::~StringList() {
+    delete[] head;
+    head = 0;
+    tail = 0;
+}
+
+
+size_t size() const {
+    return tail - head;
+}
+
+
 string StringList::toString() const {
     string s = "";
     char* h = head;
