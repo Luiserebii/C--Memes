@@ -1,8 +1,16 @@
 #include <string>
 #include <algorithm>
+#include <iostream>
 
 using std::string;
 using std::copy;
+using std::ostream;
+using std::cout;
+using std::endl;
+
+/**
+ * StringList is really a construct built on top of an array of chars.
+ */
 
 class StringList {
     
@@ -15,7 +23,9 @@ class StringList {
         StringList(size_t size);
         StringList(string s);
 
-}
+        string toString() const;
+        ostream& write(ostream& out = cout) const;
+};
 
 StringList::StringList() {
     head = 0;
@@ -29,5 +39,18 @@ StringList::StringList(size_t size) {
 
 StringList::StringList(string s) {
     head = new char[s.length()];
-    copy(s.begin(), s.end(), head);    
+    copy(s.begin(), s.end(), head);
+}
+
+string StringList::toString() const {
+    string s = "";
+    char* h = head;
+    while(h != tail) {
+        s += *h++;
+    }
+    return s;
+}
+
+ostream& StringList::write(ostream& out) const {
+    out << toString() << endl;
 }
