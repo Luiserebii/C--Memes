@@ -34,6 +34,6 @@ String String::operator/(int n) {
     return String(s.substr(0, pos));
 }
 
-char String::operator[](size_t i) {
+char& String::operator[](size_t i) {
     return s.at(i);
 }

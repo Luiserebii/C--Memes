@@ -25,7 +25,7 @@ class String {
         String operator-(const String sO);
         String operator*(int n);
         String operator/(int n);
-        char operator[](size_t i);
+        char& operator[](size_t i);
 
 };
 

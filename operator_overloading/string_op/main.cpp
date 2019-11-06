@@ -41,13 +41,14 @@ int main() {
 
     //operator/
     title("operator/");
+    print(prod, "prod");
     String quot = prod / 5;
     cout << "prod / 5: " << quot.str() << endl << endl;
 
     //operator[]  
     title("operator[]");
-    cout << "s[3]: " << f[3] << endl;
-
+    print(f, "f");
+    cout << "f[3]: " << f[2] << endl;
 }
 
 ostream& print(const String& sO, const string& name) {
