@@ -28,6 +28,12 @@ int main() {
     print(nums, nums + 10);
 
     //Now, let'd try de-allocating...
+    alloc.deallocate(nums, 10);
+
+    //Print dellocation:
+    cout << "Deallocated: " << endl;
+    print(nums, nums + 10);
+
 }
 
 template <class T>
