@@ -14,8 +14,6 @@ int main() {
     String s = String("uguu");
     String t = String("owo");
 
-//    cout << "String s: " << s.str() << endl;
-//    cout << "String t: " << t.str() << endl;
     print(s, "s");
     print(t, "t");
 
@@ -24,9 +22,20 @@ int main() {
     cout << "s + t: " << sum.str() << endl; 
 
     //operator-
+    String f = String("Fly me to the moon");
+    String m = String("me to the ");
+    
+    print(f, "f");
+    print(m, "m");
 
-//    String diff = String("Fly me to the moon") - String("me to the ");
-//    cout << ""
+    String diff = f - m;
+    cout << "f - m: " << diff.str() << endl;
+
+    //operator*
+
+    //operator/
+
+    //operator[]  
 
 }
 
