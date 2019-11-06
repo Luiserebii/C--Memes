@@ -38,7 +38,23 @@ StringList::StringList(const StringList& s) {
 }
 
 //Assignment operator
-StringList::operator=
+StringList::operator=(const StringList& s) {
+
+    if(this != &s) {
+        //Obliterate
+        delete[] head;
+        head = 0;
+        tail = 0;
+
+        //Copy/set
+        size_t size = s.size();
+        head = new char[size];
+        tail = head + size;
+        copy(s.begin(), s.end(), head);
+    }
+
+    return *this;
+}
 
 //Destructor
 StringList::~StringList() {
