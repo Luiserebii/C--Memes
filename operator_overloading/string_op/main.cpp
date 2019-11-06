@@ -1,10 +1,14 @@
 #include <string>
+using std::string;
 
 class String {
 
     private: 
         string s;
     public:
+        String();
+        String(const string str) { s = str; }
+
         string getString() const { return s; }
         void setString(const string str) { s = str; }
 
@@ -15,6 +19,10 @@ class String {
         // [] operator obtains a char from the string
         String operator+(const String string);
 
+};
+
+String String::operator+(const String string) {
+    return String(s + string.getString());
 }
 
 int main() {
