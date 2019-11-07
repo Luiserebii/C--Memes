@@ -19,7 +19,9 @@ class Vector {
         //Types
         typedef T* iterator;
         typedef const T* const_iterator;
+
         typedef size_t size_type;
+
         typedef T value_type;
         typedef ptrdiff_t difference_type;
         typedef T& reference;
@@ -33,13 +35,16 @@ class Vector {
         Vector& operator=(const Vector& rhs);
         ~Vector();
 
+        //Operators
         T& operator[](size_t i);
         const T& operator[](size_t i) const;
 
+        //Functions
         T& at(size_t);
-
         void push_back(const T& val);
+        void pop_back();
 
+        //Iterator functions
         iterator begin() { return head; }
         const_iterator begin() const { return head; }
 
@@ -176,5 +181,24 @@ void Vector<T>::push_back(const T& val) {
 
         head = b;
         tail = b + 1;
+    }
+}
+
+template <class T>
+void Vector<T>::pop_back() {
+    size_t newSize = size() - 1;
+    if(size() != 0) {
+        //Allocate for new size
+        T* b = alloc.allocate(newSize);
+
+        //Copy all, but last element over
+        T* e = uninitialized_copy(head, tail - 1, b);
+
+        //Destroy old stuff
+        destroy();
+
+        //Set new stuff up
+        head = b;
+        tail = e;
     }
 }
