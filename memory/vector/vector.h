@@ -31,6 +31,7 @@ class Vector {
         //Copy, assign, destruct
         Vector(const Vector&);
         Vector& operator=(const Vector& rhs);
+        ~Vector();
 
         T& operator[](size_t i);
         const T& operator[](size_t i) const;
@@ -75,6 +76,8 @@ Vector<T>& Vector<T>::operator=(const Vector& rhs) {
     //If not self-assigning...
     if(this != &rhs) {
         //Destroy
+        alloc.deallocate(head, size());
+
         head = 0;
         tail = 0;
 
@@ -84,6 +87,15 @@ Vector<T>& Vector<T>::operator=(const Vector& rhs) {
     }
     //In any case, return the left-hand side, i.e. our class
     return *this;
+}
+
+template <class T>
+Vector<T>::~Vector() {
+    //Destroy
+    alloc.deallocate(head, size());
+
+    head = 0;
+    tail = 0;
 }
 
 template <class T>

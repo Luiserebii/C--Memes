@@ -24,6 +24,13 @@ int main() {
     cout << "HEY, AT INDEX 0: " << v[0] << endl;
     print(v.begin(), v.end());
     print(vc.begin(), vc.end());
+
+    //Testing self-assignment
+    cout << "Testing self-assignment" << endl;
+    print(v.begin(), v.end());
+    v = v;
+    print(v.begin(), v.end());
+
 }
 
 template <class T>
