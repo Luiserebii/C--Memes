@@ -55,6 +55,7 @@ class Vector {
         allocator<T> alloc;
 
         void create();
+        void create(const T* b, const T* e);
         void destroy();
 
 };
@@ -100,7 +101,7 @@ void Vector<T>::create() {
 
 //Set up using a pair of iterators
 template <class T>
-void Vector<T>::create(T* b, T* e) {
+void Vector<T>::create(const T* b, const T* e) {
     //Allocate space according to the size of the iterators, and...
     head = alloc.allocate(e - b);
     //Load into memory
