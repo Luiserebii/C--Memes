@@ -68,10 +68,7 @@ Vector<T>::Vector() {
 template <class T>
 Vector<T>::Vector(const Vector& v) {
     //Load in values from second vector in
-    //Allocate space
-    head = alloc.allocate(v.size());
-    //Copy
-    tail = uninitialized_copy(v.begin(), v.end(), head);
+    create(v.begin(), v.end());
 }
 
 template <class T>
@@ -82,8 +79,7 @@ Vector<T>& Vector<T>::operator=(const Vector& rhs) {
         destroy();
 
         //Set up
-        head = alloc.allocate(rhs.size());
-        tail = uninitialized_copy(rhs.begin(), rhs.end(), head);
+        create(rhs.begin(), rhs.end());
     }
     //In any case, return the left-hand side, i.e. our class
     return *this;
@@ -103,7 +99,13 @@ void Vector<T>::create() {
 }
 
 //Set up using a pair of iterators
-
+template <class T>
+void Vector<T>::create(T* b, T* e) {
+    //Allocate space according to the size of the iterators, and...
+    head = alloc.allocate(e - b);
+    //Load into memory
+    tail = uninitialized_copy(b, e, head);
+}
 
 template <class T>
 void Vector<T>::destroy() {
