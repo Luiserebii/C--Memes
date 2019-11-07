@@ -59,7 +59,7 @@ void Vector<T>::push_back(const T& val) {
 
         //Set new stuff up
         head = b;
-        tail = e;
+        tail = e + 1;
         
     } else {
         //Allocate fresh element
