@@ -50,7 +50,7 @@ Vector<T>::Vector() {
 
 template <class T>
 T& Vector<T>::operator[](size_t i) {
-    if(i < size && i >= 0) {
+    if(i < size() && i >= 0) {
         return *(head + i);
     } else {
         //Good idea to throw an error, like out_of_bounds()

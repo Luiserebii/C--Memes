@@ -19,6 +19,10 @@ int main() {
     Vector<int> vc = v;
     print(vc.begin(), v.end());
 
+    cout << "HEY, AT INDEX 0: " << v[0] << endl;
+    v[0] = 100;
+    cout << "HEY, AT INDEX 0: " << v[0] << endl;
+
 }
 
 template <class T>
