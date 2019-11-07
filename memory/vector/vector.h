@@ -54,6 +54,8 @@ class Vector {
         iterator tail;
         allocator<T> alloc;
 
+        void destroy();
+
 };
 
 template <class T>
@@ -76,10 +78,7 @@ Vector<T>& Vector<T>::operator=(const Vector& rhs) {
     //If not self-assigning...
     if(this != &rhs) {
         //Destroy
-        alloc.deallocate(head, size());
-
-        head = 0;
-        tail = 0;
+        destroy();
 
         //Set up
         head = alloc.allocate(rhs.size());
@@ -92,11 +91,27 @@ Vector<T>& Vector<T>::operator=(const Vector& rhs) {
 template <class T>
 Vector<T>::~Vector() {
     //Destroy
+    destroy();
+}
+
+
+template <class T>
+void Vector<T>::destroy() {
+
+    //Destroy all data, if existing
+    if(head != 0) {
+        T* b = head;
+        while(b != tail) {
+            alloc.destroy(b++);
+        }
+    }
+    //Deallocate
     alloc.deallocate(head, size());
 
-    head = 0;
-    tail = 0;
+    //Reset pointers
+    head = tail = 0;
 }
+
 
 template <class T>
 T& Vector<T>::operator[](size_t i) {
