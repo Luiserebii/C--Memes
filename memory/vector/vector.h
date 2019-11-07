@@ -51,6 +51,9 @@ void Vector<T>::push_back(const T& val) {
         //Copy stuff over
         T* e = uninitialized_copy(head, tail, b);
 
+        //Add new element
+        alloc.construct(e, val);
+
         //Destroy old stuff (don't we have to destroy individually, or deallocation is fine...?)
         alloc.deallocate(head, size());
 
@@ -58,5 +61,14 @@ void Vector<T>::push_back(const T& val) {
         head = b;
         tail = e;
         
+    } else {
+        //Allocate fresh element
+        T* b = alloc.allocate(1);
+        
+        //Create
+        alloc.construct(b, val);
+
+        head = b;
+        tail = b + 1;
     }
 }
