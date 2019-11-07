@@ -17,12 +17,13 @@ int main() {
 
     print(v.begin(), v.end());
     Vector<int> vc = v;
-    print(vc.begin(), v.end());
+    print(vc.begin(), vc.end());
 
     cout << "HEY, AT INDEX 0: " << v[0] << endl;
     v[0] = 100;
     cout << "HEY, AT INDEX 0: " << v[0] << endl;
-
+    print(v.begin(), v.end());
+    print(vc.begin(), vc.end());
 }
 
 template <class T>
