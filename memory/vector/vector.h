@@ -24,6 +24,9 @@ class Vector {
         //Constructors
         Vector();
 
+        //Copy, assign, destruct
+        Vector(const Vector&);
+
         T& operator[](size_t i);
         const T& operator[](size_t i) const;
 
@@ -51,6 +54,15 @@ template <class T>
 Vector<T>::Vector() {
     head = 0;
     tail = 0;
+}
+
+template <class T>
+Vector<T>::Vector(const Vector& v) {
+    //Load in values from second vector in
+    //Allocate space
+    head = alloc.allocate(v.size());
+    //Copy
+    tail = uninitialized_copy(v.begin(), v.end(), head);
 }
 
 template <class T>
