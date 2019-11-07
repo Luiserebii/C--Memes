@@ -16,6 +16,8 @@ int main() {
     v.push_back(4);
 
     print(v.begin(), v.end());
+    Vector<int> vc = v;
+    print(vc.begin(), v.end());
 
 }
 

@@ -3,6 +3,7 @@
 
 using std::allocator;
 using std::uninitialized_copy;
+using std::ptrdiff_t;
 
 template <class T>
 class Vector {
@@ -20,6 +21,8 @@ class Vector {
 
         //Constructors
         Vector();
+
+        T& operator[](size_t i);
 
         void push_back(const T& val);
 
@@ -43,6 +46,15 @@ template <class T>
 Vector<T>::Vector() {
     head = 0;
     tail = 0;
+}
+
+template <class T>
+T& Vector<T>::operator[](size_t i) {
+    if(i < size && i >= 0) {
+        return *(head + i);
+    } else {
+        //Good idea to throw an error, like out_of_bounds()
+    }
 }
 
 template <class T>
