@@ -2,6 +2,7 @@
 #include <memory>
 
 using std::allocator;
+using std::uninitialized_copy;
 
 template <class T>
 class Vector {

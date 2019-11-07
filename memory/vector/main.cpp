@@ -12,14 +12,16 @@ int main() {
 
     Vector<int> v;
     v.push_back(1);
+    v.push_back(3);
 
-
+    print(v.begin(), v.end());
 
 }
 
 template <class T>
 void print(T begin, T end, ostream& out) {
     while(begin != end) {
-        out << *begin++ << endl;
+        out << *begin++ << " ";
     }
+    out << endl;
 }
