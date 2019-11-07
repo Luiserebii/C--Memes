@@ -9,8 +9,14 @@ class Vector {
 
     public: 
 
+        //Types
         typedef T* iterator;
         typedef const T* const_iterator;
+        typedef size_t size_type;
+        typedef T value_type;
+        typedef ptrdiff_t difference_type;
+        typedef T& reference;
+        typedef const T& const_reference;
 
         //Constructors
         Vector();
