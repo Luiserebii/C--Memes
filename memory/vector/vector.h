@@ -54,14 +54,15 @@ class Vector {
         iterator tail;
         allocator<T> alloc;
 
+        void create();
         void destroy();
 
 };
 
 template <class T>
 Vector<T>::Vector() {
-    head = 0;
-    tail = 0;
+    //Create a fresh, empty vector
+    create();
 }
 
 template <class T>
@@ -93,6 +94,15 @@ Vector<T>::~Vector() {
     //Destroy
     destroy();
 }
+
+
+//Create a fresh, empty vector
+template <class T>
+void Vector<T>::create() {
+    head = tail = 0;
+}
+
+//Set up using a pair of iterators
 
 
 template <class T>
@@ -147,8 +157,8 @@ void Vector<T>::push_back(const T& val) {
         //Add new element
         alloc.construct(e, val);
 
-        //Destroy old stuff (don't we have to destroy individually, or deallocation is fine...?)
-        alloc.deallocate(head, size());
+        //Destroy old stuff 
+        destroy();
 
         //Set new stuff up
         head = b;
