@@ -1,9 +1,11 @@
 #include <cstdlib>
 #include <memory>
+#include <stdexcept>
 
 using std::allocator;
 using std::uninitialized_copy;
 using std::ptrdiff_t;
+using std::out_of_range;
 
 template <class T>
 class Vector {
@@ -23,6 +25,9 @@ class Vector {
         Vector();
 
         T& operator[](size_t i);
+        const T& operator[](size_t i) const;
+
+        T& at(size_t);
 
         void push_back(const T& val);
 
@@ -50,10 +55,20 @@ Vector<T>::Vector() {
 
 template <class T>
 T& Vector<T>::operator[](size_t i) {
+    return at(i);
+}
+
+template <class T>
+const T& Vector<T>::operator[](size_t i) const {
+    return at(i);
+}
+
+template <class T>
+T& Vector<T>::at(size_t i) {
     if(i < size() && i >= 0) {
         return *(head + i);
     } else {
-        //Good idea to throw an error, like out_of_bounds()
+        throw out_of_range("Index is out of bounds!");
     }
 }
 
