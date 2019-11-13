@@ -9,20 +9,22 @@ int main() {
     //Testing this stuff out
     cout << "Integer()" << endl;
     Integer a;
-    cout << a.getVal() << endl;
+    cout << a.val() << endl;
 
     cout << "Integer(10)" << endl;
     Integer b = 10;
-    cout << b.getVal() << endl;
+    cout << b.val() << endl;
 
     cout << "Integer(10.0)" << endl;
     Integer c = 10.0;
-    cout << c.getVal() << endl;
+    cout << c.val() << endl;
 
     cout << "Integer(\"10\")" << endl;
     //Integer d = "10"; //Should break
     Integer d("10"); //Should break
-    cout << d.getVal() << endl;   
+    cout << d.val() << endl;   
 
+    cout << "a + b + c" << endl;
+    cout << a + b + c << endl;
 
 }

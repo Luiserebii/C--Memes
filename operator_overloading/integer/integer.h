@@ -13,16 +13,18 @@ class Integer {
         //Construction via strings **MUST** be explicit
         explicit Integer(const std::string& s);
 
-        int getVal() const { return val; }
+        //Our magical conversion operator; I wonder if this will cause all operators to just sort of work?
+        operator int() const { return v; };
+
+        int val() const { return v; }
 
     private:
-        int val;
-
-
-
-
+        int v;
 
 };
+
+
+//Integer operator+(const Integer& a, const Integer& b);
 
 
 #endif
