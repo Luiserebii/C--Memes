@@ -32,8 +32,8 @@ Integer& Integer::operator+=(const Integer& i) {
     v += i.val();
     return *this;
 }
-
+/*
 Integer operator+(const Integer& a, const Integer& b) {
     cout << "uguu" << endl;
     return a.val() + b.val();
-}
+}*/

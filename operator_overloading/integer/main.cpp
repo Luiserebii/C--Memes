@@ -31,4 +31,6 @@ int main() {
     b += Integer(100);
     cout << b << endl;
 
+    cout << "Mixed type expression: b + 10 + Integer(500)" << endl;
+    cout << b + 10 + Integer(500) << endl;
 }

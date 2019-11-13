@@ -25,7 +25,7 @@ class Integer {
 };
 
 //Testing priority vs. auto-conversion
-Integer operator+(const Integer& a, const Integer& b);
+//Integer operator+(const Integer& a, const Integer& b);
 
 
 #endif
