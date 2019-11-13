@@ -6,9 +6,9 @@ class Integer {
 
     public:
         Integer();
-        Integer(int v);
+        Integer(int i);
         //Automatic conversion for doubles
-        Integer(double v);
+        Integer(double d);
         //Construction via strings **MUST** be explicit
         explicit Integer(const string& s);
 
