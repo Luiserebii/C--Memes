@@ -25,6 +25,10 @@ class Integer {
 };
 
 //Testing priority vs. auto-conversion
+
+//Interestingly enough, the function below can cause
+//an ambiguous overload for a mixed-type expression
+
 //Integer operator+(const Integer& a, const Integer& b);
 
 

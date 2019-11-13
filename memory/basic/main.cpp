@@ -20,7 +20,7 @@ int main() {
     //Assign values, 1-10
     //This may fail, as nothing initialized? Let's see...
     int* n = nums;
-    for(int i = 0; n != nums + 10; ++i) {
+    for(int i = 1; n != nums + 10; ++i) {
         *n++ = i;
     }
 
