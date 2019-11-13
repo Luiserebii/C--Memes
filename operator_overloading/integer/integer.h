@@ -23,8 +23,8 @@ class Integer {
 
 };
 
-
-//Integer operator+(const Integer& a, const Integer& b);
+//Testing priority vs. auto-conversion
+Integer operator+(const Integer& a, const Integer& b);
 
 
 #endif

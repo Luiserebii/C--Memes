@@ -1,6 +1,10 @@
 #include "integer.h"
 #include <string>
 #include <sstream>
+#include <iostream>
+
+using std::cout;
+using std::endl;
 
 using std::string;
 using std::istringstream;
@@ -22,7 +26,8 @@ Integer::Integer(const string& s) {
     istringstream iss(s);
     iss >> v;
 }
-/*
+
 Integer operator+(const Integer& a, const Integer& b) {
+    cout << "uguu" << endl;
     return a.val() + b.val();
-}*/
+}
