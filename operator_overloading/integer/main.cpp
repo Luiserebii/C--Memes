@@ -27,4 +27,8 @@ int main() {
     cout << "a + b + c" << endl;
     cout << a + b + c << endl;
 
+    cout << "b += Integer(100)" << endl;
+    b += Integer(100);
+    cout << b << endl;
+
 }

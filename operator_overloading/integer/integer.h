@@ -13,6 +13,7 @@ class Integer {
         //Construction via strings **MUST** be explicit
         explicit Integer(const std::string& s);
 
+        Integer& operator+=(const Integer& i);
         //Our magical conversion operator; I wonder if this will cause all operators to just sort of work?
         operator int() const { return v; };
 

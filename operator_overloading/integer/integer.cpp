@@ -27,6 +27,12 @@ Integer::Integer(const string& s) {
     iss >> v;
 }
 
+Integer& Integer::operator+=(const Integer& i) {
+    //Add onto
+    v += i.val();
+    return *this;
+}
+
 Integer operator+(const Integer& a, const Integer& b) {
     cout << "uguu" << endl;
     return a.val() + b.val();
