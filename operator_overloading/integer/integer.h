@@ -1,6 +1,7 @@
 #ifndef GUARD_INTEGER_H
 #define GUARD_INTEGER_H
 
+#include <string>
 
 class Integer {
 
@@ -10,7 +11,9 @@ class Integer {
         //Automatic conversion for doubles
         Integer(double d);
         //Construction via strings **MUST** be explicit
-        explicit Integer(const string& s);
+        explicit Integer(const std::string& s);
+
+        int getVal() const { return val; }
 
     private:
         int val;
@@ -19,7 +22,7 @@ class Integer {
 
 
 
-}
+};
 
 
 #endif
