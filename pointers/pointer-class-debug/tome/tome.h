@@ -6,13 +6,15 @@
 class Tome {
   public:
     Tome();
-    Tome(std::string t, int p);
+    Tome(std::string tt, std::string tp, int p);
     
     std::string getTitle() const;
+    std::string getType() const;
     int getPages() const;
     
   private:
     std::string title;
+    std::string type;
     int pages;
 
 }
