@@ -39,6 +39,5 @@ int main() {
     cout << "===================================================" << endl
          << "Printing output for recursive trimming (HARDCOVER):" << endl
          << "===================================================" << endl;
-    cout << "RETURNED VAL SIZE: " << vTrimHard.size();
     vTomeOutput(vTrimHard);
 }

@@ -35,7 +35,6 @@ void vTomeOutput(const vector<Tome*>& v) {
     }
     //Print the first vector element
     (*v.begin())->output();
-    //cout << "Address: " << (*v.begin()) << endl;
     //For legibility, print a newline at the end
     cout << endl;
     //Recursively call, passing a smaller vector
@@ -48,14 +47,6 @@ vector<Tome*> vTomeTrim(const vector<Tome*>& vIn, const string& type) {
     vector<Tome*>::iterator it;
     //If there are vector pointers which have not other kinds of files, return
     if((it = vTomeTypeOnlyExists(v.begin(), v.end(), type)) == v.end()) {
-        cout << "===OwO===" << endl;
-        vTomeOutput(v);
-        cout << "v: " << v.end() - v.begin() << endl;
-        cout << "=========" << endl;
-        //vector<Tome*> ret(v.begin(), v.end());
-        //cout << "Just forming the ret" << endl;
-        //cout << "v: " << ret.end() - ret.begin() << endl;
-        //return ret;
         return v;
     }
     //Erase the found element
@@ -64,17 +55,3 @@ vector<Tome*> vTomeTrim(const vector<Tome*>& vIn, const string& type) {
     //Recurse by calling our function once more
     return vTomeTrim(v, type);
 }
-/*
-vector<Tome*> vTomeTrim(const vector<Tome*>& vIn, const string& type) {
-    
-    //Construct a vector we can modify
-    vector<Tome*> v(vIn.begin(), vIn.end());
-    vector<Tome*>::iterator it;
-    //Erase all values that are not of the type passed
-    while((it = vTomeTypeOnlyExists(v.begin(), v.end(), type)) != v.end()) {
-        v.erase(it);
-    }
-
-    return v;
-}*/
-
