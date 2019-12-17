@@ -41,7 +41,7 @@ void vTomeOutput(const vector<Tome*>& v) {
     //Recursively call, passing a smaller vector
     vTomeOutput(vector<Tome*>(v.begin() + 1, v.end()));
 }
-/*
+
 vector<Tome*> vTomeTrim(const vector<Tome*>& vIn, const string& type) {
     //Construct a vector we can modify
     vector<Tome*> v(vIn.begin(), vIn.end());
@@ -62,9 +62,9 @@ vector<Tome*> vTomeTrim(const vector<Tome*>& vIn, const string& type) {
     v.erase(it);
     vector<Tome*> vNew;
     //Recurse by calling our function once more
-    vTomeTrim(v, type);
-}*/
-
+    return vTomeTrim(v, type);
+}
+/*
 vector<Tome*> vTomeTrim(const vector<Tome*>& vIn, const string& type) {
     
     //Construct a vector we can modify
@@ -76,5 +76,5 @@ vector<Tome*> vTomeTrim(const vector<Tome*>& vIn, const string& type) {
     }
 
     return v;
-}
+}*/
 
