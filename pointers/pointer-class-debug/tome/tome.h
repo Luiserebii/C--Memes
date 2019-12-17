@@ -11,7 +11,9 @@ class Tome {
     std::string getTitle() const;
     std::string getType() const;
     int getPages() const;
-    
+
+    void output() const;
+
   private:
     std::string title;
     std::string type;

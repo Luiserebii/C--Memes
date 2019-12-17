@@ -1,7 +1,10 @@
 #include "tome.h"
+#include <iostream>
 #include <string>
 
 using std::string;
+using std::cout;
+using sed::endl;
 
 /**
  * Constructors
@@ -22,4 +25,13 @@ string getType const {
 
 int getPages() const {
     return pages;
+}
+
+/**
+ * Functions
+ */
+void output() const {
+    cout << "Title: " << title << endl
+        << "Type: " << type << endl
+        << "Pages: " << pages << endl;
 }
