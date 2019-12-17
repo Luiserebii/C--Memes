@@ -19,6 +19,6 @@ class Tome {
     std::string type;
     int pages;
 
-}
+};
 
 #endif

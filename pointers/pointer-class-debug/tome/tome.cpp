@@ -4,33 +4,33 @@
 
 using std::string;
 using std::cout;
-using sed::endl;
+using std::endl;
 
 /**
  * Constructors
  */
 Tome::Tome(): title(""), type(""), pages(0) {}
-Tome::Tome(string t, int p): title(t), type(""), pages(p) {}
+Tome::Tome(string tt, string tp, int p): title(tt), type(tp), pages(p) {}
 
 /**
  * Accessors
  */
-string getTitle() const {
+string Tome::getTitle() const {
     return title;
 }
 
-string getType const {
+string Tome::getType() const {
     return type;
 }
 
-int getPages() const {
+int Tome::getPages() const {
     return pages;
 }
 
 /**
  * Functions
  */
-void output() const {
+void Tome::output() const {
     cout << "Title: " << title << endl
         << "Type: " << type << endl
         << "Pages: " << pages << endl;

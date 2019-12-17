@@ -7,7 +7,7 @@
 #include <vector>
 
 void vTomePrint(const std::vector<Tome*>& v);
-std::vector<File*> vTomeTrim(const std::vector<Tome*>& vIn, const std::string& type);
+std::vector<Tome*> vTomeTrim(const std::vector<Tome*>& vIn, const std::string& type);
 
 #endif
 
