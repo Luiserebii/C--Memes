@@ -12,7 +12,7 @@ int main() {
 
     //Create some Tome instances
     Tome* t1 = new Tome("Accelerated C++", "SOFTCOVER", 300);
-    Tome* t2 = new Tome("Modern C", "HARDCOVER", 800)
+    Tome* t2 = new Tome("Modern C", "HARDCOVER", 800);
     Tome* t3 = new Tome("The C Programming Language", "SOFTCOVER", 150);
 
     //Construct Tome* vector
@@ -29,16 +29,16 @@ int main() {
     vTomeOutput(v);
 
     //2. Test recursive conversion function
-    vector<Tome*> vTrimHard = vTomeTrim(v, "HARDCOVER");
-    cout << "===================================================" << endl
-         << "Printing output for recursive trimming (HARDCOVER):" << endl
-         << "===================================================" << endl;
-    vTomeOutput(vTrimHard);
-
     vector<Tome*> vTrimSoft = vTomeTrim(v, "SOFTCOVER");
     cout << "===================================================" << endl
          << "Printing output for recursive trimming (SOFTCOVER):" << endl
          << "===================================================" << endl;
-    cout << "RETURNED VAL SIZE: " << vTrimSoft.size();
     vTomeOutput(vTrimSoft);
+
+    vector<Tome*> vTrimHard = vTomeTrim(v, "HARDCOVER");
+    cout << "===================================================" << endl
+         << "Printing output for recursive trimming (HARDCOVER):" << endl
+         << "===================================================" << endl;
+    cout << "RETURNED VAL SIZE: " << vTrimHard.size();
+    vTomeOutput(vTrimHard);
 }
